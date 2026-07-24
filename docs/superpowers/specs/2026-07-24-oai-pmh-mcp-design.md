@@ -46,7 +46,7 @@ Cztery warstwy o rozdzielonych odpowiedzialnościach, każda testowalna osobno:
 │ client.py — buduje URL (base_url+verb+params), GET (httpx)│
 │             parsuje XML, wykrywa <error>, oddaje token    │
 │ models.py — Header, Record, RepositoryIdentity, MetadataFormat,
-│             SetInfo, ListResult                           │
+│             SetInfo, ListResult (z atrybutami tokenu)     │
 │ errors.py — typy wyjątków ↔ kody błędów OAI-PMH           │
 ├─ formatowanie ───────────────────────────────────────────┤
 │ formatting.py — Record/lista → text | json | xml          │
@@ -91,14 +91,26 @@ oai-pmh-mcp/
 ## 3. Narzędzia MCP (7)
 
 Wierne 6 czasowników + 1 nakładka. Wspólne parametry: `base_url` (wymagany),
-`metadata_prefix` (domyślnie `"oai_dc"`), `from_`/`until` (daty ISO), `set_`,
+`metadata_prefix` (domyślnie `"oai_dc"`), `from_`/`until` (daty), `set_`,
 `resumption_token`, `format` (`"text"` | `"json"` | `"xml"`, domyślnie `text`).
+
+**Nazwy parametrów w schemacie MCP:** `from_` i `set_` mają trailing underscore
+tylko po to, by nie kolidować ze słowami kluczowymi Pythona. W schemacie MCP
+widocznym dla modelu eksponujemy je jako `from` i `set` (FastMCP/Pydantic
+`Field(alias=...)`), żeby model widział nazwy zgodne z protokołem.
+
+**Granularność dat (`from_`/`until`):** akceptujemy obie formy — `YYYY-MM-DD`
+oraz pełny `YYYY-MM-DDThh:mm:ssZ`. Reguły (OAI-PMH §3.3): (a) `from` i `until`
+muszą mieć **tę samą** granularność; (b) nie wolno przekroczyć granularności
+repozytorium (z `Identify` → `granularity`). Klient waliduje zgodność pary; przy
+niezgodności zwraca czytelny błąd, a w opisie narzędzia podpowiada sprawdzenie
+`granularity` przez `identify`.
 
 | Narzędzie | Czasownik OAI | Rola |
 |---|---|---|
 | `identify` | Identify | tożsamość repo: nazwa, `baseURL`, wersja protokołu, e-mail admina, `earliestDatestamp`, `deletedRecord`, `granularity`. Też sanity-check hosta. |
 | `list_metadata_formats` | ListMetadataFormats | dostępne prefiksy (oai_dc, mods, marc…); opcjonalny `identifier` |
-| `list_sets` | ListSets | kolekcje/zestawy; może paginować |
+| `list_sets` | ListSets | kolekcje/zestawy; może paginować. `setSpec` bywa hierarchiczny (dwukropki, np. `institution:faculty`) — traktujemy jako pass-through, opis narzędzia tłumaczy zagnieżdżenie |
 | `list_identifiers` | ListIdentifiers | *same nagłówki* (identifier, datestamp, setSpec, status) — tani przegląd |
 | `list_records` | ListRecords | jedna strona pełnych rekordów + `resumption_token` |
 | `get_record` | GetRecord | jeden rekord po `identifier` (wymagany) |
@@ -107,9 +119,20 @@ Wierne 6 czasowników + 1 nakładka. Wspólne parametry: `base_url` (wymagany),
 ### Parametry `harvest_records`
 
 `base_url`, `metadata_prefix="oai_dc"`, `from_`, `until`, `set_`,
-`max_records=500`, `format="text"`. Pętla po stronie serwera podąża za
-`resumptionToken` aż do wyczerpania **lub** osiągnięcia `max_records`
+`resumption_token`, `max_records=500`, `format="text"`. Pętla po stronie serwera
+podąża za `resumptionToken` aż do wyczerpania **lub** osiągnięcia `max_records`
 (wtedy `truncated=True` i zwracany ostatni token, by model mógł kontynuować).
+
+- **Kontynuacja (naprawa luki z review):** jeśli podano `resumption_token`,
+  pętla startuje od niego (reguła ekskluzywności jak w §5 — pozostałe argumenty
+  doboru są wtedy ignorowane/zabronione). Dzięki temu model realnie wznawia
+  ucięty harvest, zamiast wracać do `list_records`.
+- **Rekordy `deleted`** liczą się do `max_records` (predykcyjny, prosty licznik
+  odpowiedzi; deleted trafiają do wyniku z flagą, nie są cicho pomijane).
+- **`format=xml` w `harvest_records`** zwraca listę surowych odpowiedzi
+  kolejnych stron (nie da się skleić N kopert w jeden „oryginalny" dokument bez
+  ich modyfikacji). Kryterium wierności „bajt w bajt" (§9 pkt 6) dotyczy narzędzi
+  jednostronicowych; tu gwarantujemy wierność każdej strony z osobna.
 
 ## 4. Format wyjścia
 
@@ -118,14 +141,21 @@ Format dobrany do czasownika, sterowany parametrem `format`:
 - **`text`** (domyślny, token-lean): listy rekordów jako bloki `pole: wartość`
   rozdzielone `---`; pola wielowartościowe łączone. Dublin Core jest płaski,
   więc `klucz: wartość` w zupełności wystarcza i jest tańszy tokenowo niż JSON.
-  `GetRecord` → pełny komplet pól w tym samym stylu.
+  `GetRecord` → pełny komplet pól w tym samym stylu. **Dla prefiksów innych niż
+  `oai_dc`** (mods, marc — struktura zagnieżdżona) `text` spłaszcza elementy
+  liściowe (`ścieżka > do > liścia: wartość`) i w nagłówku sugeruje `format=xml`
+  dla pełnej struktury.
 - **`json`**: ustrukturyzowany dict (koperta protokołu + payload metadanych),
-  gdy klient chce parsować maszynowo.
+  gdy klient chce parsować maszynowo. Zawiera też kontener `about` rekordu
+  (prowieniencja/prawa), jeśli obecny.
 - **`xml`**: surowy oryginał odpowiedzi repozytorium — dla pól spoza Dublin
   Core i debugowania. Zero utraty wierności.
 
 Każdy wynik listowy zawiera `resumption_token` (jeśli jest) — **nieprzezroczysty**,
-oddawany modelowi dosłownie do kolejnego wywołania.
+oddawany modelowi dosłownie do kolejnego wywołania — a także jego atrybuty, gdy
+repozytorium je poda: **`completeListSize`** i **`cursor`** (darmowy pasek
+postępu: „rekord 500 z 12 000" — kluczowa informacja dla modelu przy decyzji,
+czy kontynuować) oraz **`expirationDate`** (ostrzeżenie, że token może wygasnąć).
 
 ## 5. Przepływ danych i paginacja
 
@@ -149,8 +179,12 @@ w kolejnym wywołaniu jako `resumption_token`. Uwaga protokolarna: gdy podano
 
 - **Sieć** (timeout / DNS / 4xx / 5xx): czytelny komunikat, nie stacktrace —
   „Nie udało się połączyć z {base_url}: {powód}". Domyślny timeout ~30 s,
-  nagłówek `User-Agent: oai-pmh-mcp/<wersja>". Rozmiar odpowiedzi z rozsądnym
-  limitem.
+  nagłówek `User-Agent: oai-pmh-mcp/<wersja>". Limit rozmiaru odpowiedzi: **10 MB**.
+- **Flow control — HTTP 503 + `Retry-After`** (OAI-PMH §3.4.2): repozytorium
+  (dLibra często ma rate-limit) może odpowiedzieć `503` z nagłówkiem
+  `Retry-After`. Klient to honoruje: odczekuje wskazany czas i ponawia, z
+  limitem prób (np. 3) i sensownym maksymalnym backoffem. Szczególnie istotne w
+  pętli `harvest_records`, która bez tego wywaliłaby się na rate-limicie.
 - **Błędy protokołu OAI-PMH** — 8 kodów, mapowanych na czytelny komunikat z
   kodem i opisem:
   - `badArgument`, `badVerb`, `badResumptionToken`, `cannotDisseminateFormat`,
@@ -170,9 +204,11 @@ w kolejnym wywołaniu jako `resumption_token`. Uwaga protokolarna: gdy podano
 - Pokrycie per czasownik: happy path, kontynuacja po `resumptionToken`, każdy
   kod błędu, rekord usunięty, `noRecordsMatch`.
 - Formatter: `text` / `json` / `xml` dla pojedynczego rekordu i dla listy;
-  pola wielowartościowe; znaki specjalne/encje XML.
+  pola wielowartościowe; znaki specjalne/encje XML; spłaszczanie nie-`oai_dc`.
 - `harvest_records`: łączenie wielu stron + ucięcie na `max_records`
-  (`truncated=True` + token).
+  (`truncated=True` + token) + wznowienie z `resumption_token`.
+- Flow control: 503 z `Retry-After` → ponowienie po odczekaniu (z limitem prób).
+- Walidacja granularności dat: niezgodna para `from_`/`until` → czytelny błąd.
 - `test_integration.py`: kilka testów na prawdziwym endpoincie (WBC),
   oznaczonych `@pytest.mark.integration` i skippable (bez sieci w CI domyślnie).
 
@@ -181,7 +217,10 @@ w kolejnym wywołaniu jako `resumption_token`. Uwaga protokolarna: gdy podano
 - **uv + pyproject.toml**, Python **3.11+** (baseline; CI matryca 3.11–3.13).
 - Entry point konsolowy: `oai-pmh-mcp` → `oai_pmh_mcp.server:main`.
 - Zależności runtime: `mcp` (FastMCP), `httpx`, `lxml`.
-- Dev: `pytest`, `pytest-asyncio` (jeśli async), `ruff`.
+- **Model wykonania: async.** FastMCP jest natywnie async, więc klient używa
+  `httpx.AsyncClient`, narzędzia są `async def`, a testy korzystają z
+  `pytest-asyncio`. (Decyzja domykająca jedyne techniczne „TBD" ze speca.)
+- Dev: `pytest`, `pytest-asyncio`, `ruff`.
 - Transport: `main()` wybiera stdio (domyślnie) lub streamable-HTTP przez
   argument CLI / env (`--transport http --host --port`).
 - Publikacja jako **GitHub `mpasternak/oai-pmh-mcp`**; przed publicznym pushem
@@ -194,6 +233,7 @@ w kolejnym wywołaniu jako `resumption_token`. Uwaga protokolarna: gdy podano
 3. Podanie tokenu w kolejnym wywołaniu pobiera następną stronę.
 4. `harvest_records(max_records=N)` łączy strony i poprawnie sygnalizuje ucięcie.
 5. `noRecordsMatch` daje pusty, udany wynik; pozostałe kody błędów — czytelny błąd.
-6. `format=xml` zwraca surowy, niezmodyfikowany XML.
+6. `format=xml` zwraca surowy, niezmodyfikowany XML (narzędzia jednostronicowe;
+   w `harvest_records` — lista surowych odpowiedzi stron, każda wierna).
 7. Serwer startuje w trybie stdio i (opcjonalnie) HTTP z jednego entrypointu.
 8. Testy jednostkowe przechodzą offline (fixture'y), lint (ruff) czysty.
