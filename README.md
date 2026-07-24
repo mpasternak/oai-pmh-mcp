@@ -4,52 +4,52 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Python 3.11+](https://img.shields.io/badge/python-3.11%2B-blue.svg)](https://www.python.org/)
 
-[![Zainstaluj w Claude Desktop](https://img.shields.io/badge/Zainstaluj_w-Claude_Desktop-D97757?style=for-the-badge&logo=anthropic&logoColor=white)](https://github.com/mpasternak/oai-pmh-mcp/releases/latest/download/oai-pmh-mcp.mcpb)
-[![Zainstaluj w Cursor](https://img.shields.io/badge/Zainstaluj_w-Cursor-000000?style=for-the-badge&logo=cursor&logoColor=white)](https://cursor.com/en/install-mcp?name=oai-pmh-mcp&config=eyJjb21tYW5kIjoidXZ4IiwiYXJncyI6WyItLWZyb20iLCJnaXQraHR0cHM6Ly9naXRodWIuY29tL21wYXN0ZXJuYWsvb2FpLXBtaC1tY3AiLCJvYWktcG1oLW1jcCJdfQ==)
-[![Zainstaluj w VS Code](https://img.shields.io/badge/Zainstaluj_w-VS_Code-0098FF?style=for-the-badge&logo=visualstudiocode&logoColor=white)](https://vscode.dev/redirect?url=vscode:mcp/install?%7B%22name%22%3A%22oai-pmh-mcp%22%2C%22command%22%3A%22uvx%22%2C%22args%22%3A%5B%22--from%22%2C%22git%2Bhttps%3A%2F%2Fgithub.com%2Fmpasternak%2Foai-pmh-mcp%22%2C%22oai-pmh-mcp%22%5D%7D)
+[![Install in Claude Desktop](https://img.shields.io/badge/Install_in-Claude_Desktop-D97757?style=for-the-badge&logo=anthropic&logoColor=white)](https://github.com/mpasternak/oai-pmh-mcp/releases/latest/download/oai-pmh-mcp.mcpb)
+[![Install in Cursor](https://img.shields.io/badge/Install_in-Cursor-000000?style=for-the-badge&logo=cursor&logoColor=white)](https://cursor.com/en/install-mcp?name=oai-pmh-mcp&config=eyJjb21tYW5kIjoidXZ4IiwiYXJncyI6WyItLWZyb20iLCJnaXQraHR0cHM6Ly9naXRodWIuY29tL21wYXN0ZXJuYWsvb2FpLXBtaC1tY3AiLCJvYWktcG1oLW1jcCJdfQ==)
+[![Install in VS Code](https://img.shields.io/badge/Install_in-VS_Code-0098FF?style=for-the-badge&logo=visualstudiocode&logoColor=white)](https://vscode.dev/redirect?url=vscode:mcp/install?%7B%22name%22%3A%22oai-pmh-mcp%22%2C%22command%22%3A%22uvx%22%2C%22args%22%3A%5B%22--from%22%2C%22git%2Bhttps%3A%2F%2Fgithub.com%2Fmpasternak%2Foai-pmh-mcp%22%2C%22oai-pmh-mcp%22%5D%7D)
 
-> Nic nie trzeba konfigurować — adres repozytorium podaje się przy wywołaniu
-> narzędzia, więc jedna instalacja obsługuje dowolną liczbę repozytoriów.
-> Ten pakiet nie jest jeszcze na PyPI, dlatego linki do Cursora i VS Code
-> instalują go prosto z gita (`uvx --from git+https://…`).
+> Nothing to configure — the repository address is passed at tool-call time, so a
+> single installation handles any number of repositories.
+> This package is not on PyPI yet, so the Cursor and VS Code links install it
+> straight from git (`uvx --from git+https://…`).
 
-**Uniwersalny serwer [MCP](https://modelcontextprotocol.io/) dla protokołu
-[OAI-PMH](https://www.openarchives.org/pmh/)** (Open Archives Initiative –
+**A universal [MCP](https://modelcontextprotocol.io/) server for the
+[OAI-PMH](https://www.openarchives.org/pmh/) protocol** (Open Archives Initiative –
 Protocol for Metadata Harvesting).
 
-Pozwala dowolnemu klientowi MCP (Claude, ChatGPT, Cursor…) odpytywać **dowolne**
-publiczne repozytorium OAI-PMH — biblioteki cyfrowe oparte o **dLibrę** (np.
-[Wielkopolska Biblioteka Cyfrowa](https://www.wbc.poznan.pl)), a także DSpace,
-EPrints, PubMed Central i inne — bez konfiguracji per-host. Adres repozytorium
-(`base_url`) podaje się w każdym wywołaniu.
+It lets any MCP client (Claude, ChatGPT, Cursor…) query **any** public OAI-PMH
+repository — digital libraries built on **dLibra** (e.g. the
+[Wielkopolska Digital Library](https://www.wbc.poznan.pl)), as well as DSpace,
+EPrints, PubMed Central and others — with no per-host configuration. The
+repository address (`base_url`) is supplied on every call.
 
-## Możliwości
+## Features
 
-Wierny wrapper sześciu czasowników OAI-PMH + wygodna nakładka do masowego
-pobierania:
+A faithful wrapper around the six OAI-PMH verbs plus a convenient layer for bulk
+harvesting:
 
-| Narzędzie | Rola |
+| Tool | Role |
 |---|---|
-| `identify` | tożsamość repozytorium (nazwa, wersja protokołu, granularność, polityka usuniętych) |
-| `list_metadata_formats` | dostępne formaty metadanych (oai_dc, mods, marc…) |
-| `list_sets` | kolekcje / zestawy |
-| `list_identifiers` | same nagłówki rekordów (tani przegląd) |
-| `list_records` | strona pełnych rekordów + token paginacji |
-| `get_record` | pojedynczy rekord po identyfikatorze |
-| `harvest_records` | auto-paginacja: pobiera wiele stron do limitu, z możliwością wznowienia |
+| `identify` | repository identity (name, protocol version, granularity, deleted-record policy) |
+| `list_metadata_formats` | available metadata formats (oai_dc, mods, marc…) |
+| `list_sets` | collections / sets |
+| `list_identifiers` | record headers only (cheap overview) |
+| `list_records` | a page of full records + pagination token |
+| `get_record` | a single record by identifier |
+| `harvest_records` | auto-pagination: fetches multiple pages up to a limit, resumable |
 
-Wyjście w trzech formatach (`format`): `text` (domyślny, oszczędny tokenowo),
-`json` (maszynowy), `xml` (surowy oryginał).
+Output in three formats (`format`): `text` (default, token-efficient),
+`json` (machine-readable), `xml` (raw original).
 
-## Instalacja
+## Installation
 
 ```bash
-uvx oai-pmh-mcp        # uruchomienie bez instalacji (stdio)
-# lub
+uvx oai-pmh-mcp        # run without installing (stdio)
+# or
 uv tool install oai-pmh-mcp
 ```
 
-## Konfiguracja klienta MCP
+## MCP client configuration
 
 ### Claude Code
 
@@ -57,7 +57,7 @@ uv tool install oai-pmh-mcp
 claude mcp add oai-pmh -- uvx oai-pmh-mcp
 ```
 
-### `mcp.json` (Cursor / inne)
+### `mcp.json` (Cursor / others)
 
 ```json
 {
@@ -69,45 +69,46 @@ claude mcp add oai-pmh -- uvx oai-pmh-mcp
 
 ## Transport
 
-Domyślnie **stdio**. Tryb zdalny **streamable-HTTP**:
+Defaults to **stdio**. Remote mode uses **streamable-HTTP**:
 
 ```bash
 oai-pmh-mcp --transport http --host 0.0.0.0 --port 8000
 ```
 
-## Przykład
+## Example
 
-> „Sprawdź, jakie kolekcje ma `https://www.wbc.poznan.pl/dlibra/oai-pmh-repository.xml`
-> i pokaż 5 najnowszych rekordów."
+> "Check what collections `https://www.wbc.poznan.pl/dlibra/oai-pmh-repository.xml`
+> has and show the 5 most recent records."
 
-Model wywoła `identify` → `list_sets` → `list_records` i złoży odpowiedź.
+The model will call `identify` → `list_sets` → `list_records` and assemble the answer.
 
-## Rozwój
+## Development
 
 ```bash
 uv sync
-uv run pytest            # testy jednostkowe (offline, fixture'y)
-uv run pytest -m integration   # testy sieciowe (opcjonalne)
+uv run pytest            # unit tests (offline, fixtures)
+uv run pytest -m integration   # network tests (optional)
 uv run ruff check .
 ```
 
-## Zakres
+## Scope
 
-OAI-PMH to protokół **metadanych** — serwer nie pobiera treści obiektów
-(skanów, PDF-ów). To read-only, bez autoryzacji, bez cache.
+OAI-PMH is a **metadata** protocol — the server does not fetch object content
+(scans, PDFs). It is read-only, without authentication, without caching.
 
-## Bezpieczeństwo
+## Security
 
-- **Parsowanie XML jest hartowane** — parser nie rozwija encji ani nie sięga do
-  sieci/DTD (ochrona przed XXE i „billion laughs" z niezaufanych repozytoriów).
-- **`harvest_records` ma twarde limity** (max rekordów, max stron, przerwanie przy
-  braku postępu) — złośliwy serwer nie zapętli klienta.
-- **SSRF z natury narzędzia:** serwer pobiera dowolny `base_url` podany przez
-  klienta (taki jest cel). Dozwolone są tylko schematy `http`/`https`. Jeśli
-  wdrażasz wariant **zdalny (HTTP)** w sieci z zasobami wewnętrznymi, uruchom go w
-  środowisku z ograniczeniem sieci wychodzącej — model mógłby wskazać adres
-  wewnętrzny (np. endpoint metadanych chmury).
+- **XML parsing is hardened** — the parser does not expand entities or reach out
+  to the network/DTD (protection against XXE and "billion laughs" from untrusted
+  repositories).
+- **`harvest_records` has hard limits** (max records, max pages, abort on lack of
+  progress) — a malicious server cannot trap the client in a loop.
+- **SSRF by design:** the server fetches any `base_url` supplied by the client
+  (that is the point). Only the `http`/`https` schemes are allowed. If you deploy
+  the **remote (HTTP)** variant on a network with internal resources, run it in an
+  environment with restricted outbound networking — the model could point at an
+  internal address (e.g. a cloud metadata endpoint).
 
-## Licencja
+## License
 
 [MIT](LICENSE)
