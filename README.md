@@ -83,7 +83,7 @@ The model will call `identify` → `list_sets` → `list_records` and assemble t
 
 ![Claude exploring the Wielkopolska Digital Library over OAI-PMH: it confirms the
 endpoint with Identify, walks the 116 sets, and surfaces 18th-century Masonic
-prints from the Masonica collection](docs/screenshot1.png)
+prints from the Masonica collection](https://raw.githubusercontent.com/mpasternak/oai-pmh-mcp/main/docs/screenshot1.png)
 
 *One prompt, pointed at the [Wielkopolska Digital Library](https://www.wbc.poznan.pl).
 `identify` confirms the endpoint — OAI-PMH 2.0, records back to 2003-12-01,
