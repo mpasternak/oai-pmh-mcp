@@ -4,6 +4,15 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Python 3.11+](https://img.shields.io/badge/python-3.11%2B-blue.svg)](https://www.python.org/)
 
+[![Zainstaluj w Claude Desktop](https://img.shields.io/badge/Zainstaluj_w-Claude_Desktop-D97757?style=for-the-badge&logo=anthropic&logoColor=white)](https://github.com/mpasternak/oai-pmh-mcp/releases/latest/download/oai-pmh-mcp.mcpb)
+[![Zainstaluj w Cursor](https://img.shields.io/badge/Zainstaluj_w-Cursor-000000?style=for-the-badge&logo=cursor&logoColor=white)](https://cursor.com/en/install-mcp?name=oai-pmh-mcp&config=eyJjb21tYW5kIjoidXZ4IiwiYXJncyI6WyItLWZyb20iLCJnaXQraHR0cHM6Ly9naXRodWIuY29tL21wYXN0ZXJuYWsvb2FpLXBtaC1tY3AiLCJvYWktcG1oLW1jcCJdfQ==)
+[![Zainstaluj w VS Code](https://img.shields.io/badge/Zainstaluj_w-VS_Code-0098FF?style=for-the-badge&logo=visualstudiocode&logoColor=white)](https://vscode.dev/redirect?url=vscode:mcp/install?%7B%22name%22%3A%22oai-pmh-mcp%22%2C%22command%22%3A%22uvx%22%2C%22args%22%3A%5B%22--from%22%2C%22git%2Bhttps%3A%2F%2Fgithub.com%2Fmpasternak%2Foai-pmh-mcp%22%2C%22oai-pmh-mcp%22%5D%7D)
+
+> Nic nie trzeba konfigurować — adres repozytorium podaje się przy wywołaniu
+> narzędzia, więc jedna instalacja obsługuje dowolną liczbę repozytoriów.
+> Ten pakiet nie jest jeszcze na PyPI, dlatego linki do Cursora i VS Code
+> instalują go prosto z gita (`uvx --from git+https://…`).
+
 **Uniwersalny serwer [MCP](https://modelcontextprotocol.io/) dla protokołu
 [OAI-PMH](https://www.openarchives.org/pmh/)** (Open Archives Initiative –
 Protocol for Metadata Harvesting).

@@ -1,0 +1,42 @@
+{
+  "manifest_version": "0.4",
+  "name": "oai-pmh-mcp",
+  "display_name": "OAI-PMH — repozytoria cyfrowe",
+  "version": "0.1.0",
+  "description": "Uniwersalny serwer MCP dla protokołu OAI-PMH — odpytuj dowolne repozytorium (dLibra, DSpace, EPrints, PMC…) przez Model Context Protocol",
+  "long_description": "Rozmawia protokołem OAI-PMH z dowolnym repozytorium cyfrowym: dLibra, DSpace, EPrints, PubMed Central i każdym innym, które wystawia punkt OAI.\n\nAdres repozytorium podaje się per wywołanie narzędzia, więc nie ma nic do skonfigurowania przy instalacji — jeden zainstalowany serwer obsługuje dowolną liczbę repozytoriów.",
+  "author": {
+    "name": "Michał Pasternak",
+    "email": "michal.dtz@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mpasternak/oai-pmh-mcp"
+  },
+  "homepage": "https://github.com/mpasternak/oai-pmh-mcp#readme",
+  "documentation": "https://github.com/mpasternak/oai-pmh-mcp#readme",
+  "support": "https://github.com/mpasternak/oai-pmh-mcp/issues",
+  "license": "MIT",
+  "keywords": [
+    "mcp",
+    "oai-pmh",
+    "dlibra",
+    "digital-library",
+    "metadata",
+    "harvesting"
+  ],
+  "server": {
+    "type": "uv",
+    "entry_point": "mcpb/launch.py",
+    "mcp_config": {
+      "command": "uv",
+      "args": ["run", "--directory", "${__dirname}", "mcpb/launch.py"]
+    }
+  },
+  "compatibility": {
+    "platforms": ["darwin", "linux", "win32"],
+    "runtimes": {
+      "python": ">=3.11"
+    }
+  }
+}
