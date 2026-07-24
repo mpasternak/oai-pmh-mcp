@@ -18,3 +18,6 @@ site/
 mkdocs.yml
 .pre-commit-config.yaml
 *.mcpb
+# README screenshots — the manifest does not reference them and they would add
+# a couple of hundred kB to every bundle.
+screenshot*.png

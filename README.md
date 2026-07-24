@@ -81,6 +81,13 @@ oai-pmh-mcp --transport http --host 0.0.0.0 --port 8000
 
 The model will call `identify` → `list_sets` → `list_records` and assemble the answer.
 
+![Claude exploring the Wielkopolska Digital Library over OAI-PMH: it confirms the
+endpoint with Identify, walks the 116 sets, and surfaces 18th-century Masonic
+prints from the Masonica collection](screenshot1.png)
+
+Nothing about that repository is hardcoded — the same tools answer the same way
+for any OAI-PMH endpoint you name.
+
 ## Development
 
 ```bash
