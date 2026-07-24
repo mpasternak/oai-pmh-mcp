@@ -85,6 +85,15 @@ The model will call `identify` → `list_sets` → `list_records` and assemble t
 endpoint with Identify, walks the 116 sets, and surfaces 18th-century Masonic
 prints from the Masonica collection](docs/screenshot1.png)
 
+*One prompt, pointed at the [Wielkopolska Digital Library](https://www.wbc.poznan.pl).
+`identify` confirms the endpoint — OAI-PMH 2.0, records back to 2003-12-01,
+`deletedRecord: persistent`. `list_sets` returns all 116 sets and finds the
+interesting ones under `rootCollection:wbc:Mirabilium`. `list_records` then reads
+out **Masonica** (267 records): the Grand Lodge of Hamburg library, confiscated
+during the war and now held in Poznań — including a 1782 exposé of Masonic
+ritual and the by-laws of a London lodge that met in the Half-Moon Tavern on
+Cheapside.*
+
 Nothing about that repository is hardcoded — the same tools answer the same way
 for any OAI-PMH endpoint you name.
 
