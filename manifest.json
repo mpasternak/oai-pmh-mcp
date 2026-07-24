@@ -1,12 +1,12 @@
 {
   "manifest_version": "0.4",
   "name": "oai-pmh-mcp",
-  "display_name": "OAI-PMH — repozytoria cyfrowe",
-  "version": "0.1.1",
-  "description": "Uniwersalny serwer MCP dla protokołu OAI-PMH — odpytuj dowolne repozytorium (dLibra, DSpace, EPrints, PMC…) przez Model Context Protocol",
-  "long_description": "Rozmawia protokołem OAI-PMH z dowolnym repozytorium cyfrowym: dLibra, DSpace, EPrints, PubMed Central i każdym innym, które wystawia punkt OAI.\n\nAdres repozytorium podaje się per wywołanie narzędzia, więc nie ma nic do skonfigurowania przy instalacji — jeden zainstalowany serwer obsługuje dowolną liczbę repozytoriów.",
+  "display_name": "OAI-PMH \u2014 repozytoria cyfrowe",
+  "version": "0.1.2",
+  "description": "Uniwersalny serwer MCP dla protoko\u0142u OAI-PMH \u2014 odpytuj dowolne repozytorium (dLibra, DSpace, EPrints, PMC\u2026) przez Model Context Protocol",
+  "long_description": "Rozmawia protoko\u0142em OAI-PMH z dowolnym repozytorium cyfrowym: dLibra, DSpace, EPrints, PubMed Central i ka\u017cdym innym, kt\u00f3re wystawia punkt OAI.\n\nAdres repozytorium podaje si\u0119 per wywo\u0142anie narz\u0119dzia, wi\u0119c nie ma nic do skonfigurowania przy instalacji \u2014 jeden zainstalowany serwer obs\u0142uguje dowoln\u0105 liczb\u0119 repozytori\u00f3w.",
   "author": {
-    "name": "Michał Pasternak",
+    "name": "Micha\u0142 Pasternak",
     "email": "michal.dtz@gmail.com"
   },
   "repository": {
@@ -30,11 +30,20 @@
     "entry_point": "mcpb/launch.py",
     "mcp_config": {
       "command": "uv",
-      "args": ["run", "--directory", "${__dirname}", "mcpb/launch.py"]
+      "args": [
+        "run",
+        "--directory",
+        "${__dirname}",
+        "mcpb/launch.py"
+      ]
     }
   },
   "compatibility": {
-    "platforms": ["darwin", "linux", "win32"],
+    "platforms": [
+      "darwin",
+      "linux",
+      "win32"
+    ],
     "runtimes": {
       "python": ">=3.11"
     }
