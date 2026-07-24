@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OAI-PMH xmlns="http://www.openarchives.org/OAI/2.0/">
+  <responseDate>2026-07-24T10:00:00Z</responseDate>
+  <request verb="GetRecord" identifier="oai:www.wbc.poznan.pl:1" metadataPrefix="oai_dc">https://www.wbc.poznan.pl/dlibra/oai-pmh-repository.xml</request>
+  <GetRecord>
+    <record>
+      <header>
+        <identifier>oai:www.wbc.poznan.pl:1</identifier>
+        <datestamp>2020-01-15T12:00:00Z</datestamp>
+        <setSpec>rootCollection:books</setSpec>
+      </header>
+      <metadata>
+        <oai_dc:dc xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/"
+                   xmlns:dc="http://purl.org/dc/elements/1.1/">
+          <dc:title>Pan Tadeusz &amp; inne utwory</dc:title>
+          <dc:creator>Adam Mickiewicz</dc:creator>
+          <dc:language>pol</dc:language>
+        </oai_dc:dc>
+      </metadata>
+    </record>
+  </GetRecord>
+</OAI-PMH>

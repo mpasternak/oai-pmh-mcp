@@ -1,0 +1,623 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="https://www.wbc.poznan.pl/style/common/xsl/oai-style.xsl"?>
+<OAI-PMH xmlns="http://www.openarchives.org/OAI/2.0/" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/
+         http://www.openarchives.org/OAI/2.0/OAI-PMH.xsd">
+	<responseDate>2026-07-24T18:05:17Z</responseDate>
+	<request metadataPrefix="oai_dc" verb="ListRecords">
+	https://www.wbc.poznan.pl/oai-pmh-repository.xml</request>
+	<ListRecords>
+	
+  <record>
+	<header>
+		<identifier>oai:www.wbc.poznan.pl:20067</identifier>
+	    <datestamp>2006-01-27T11:43:15Z</datestamp>
+		  <setSpec>rootCollection:wbc:DigitalLibraryOfWielkopolska:CulturalHeritage</setSpec> 	      <setSpec>rootCollection:wbc:ins:bkpan</setSpec> 	      <setSpec>rootCollection</setSpec> 	      <setSpec>rootCollection:wbc</setSpec> 	      <setSpec>rootCollection:wbc:DigitalLibraryOfWielkopolska</setSpec> 	      <setSpec>rootCollection:wbc:DigitalLibraryOfWielkopolska:RegionalMaterials</setSpec> 	      <setSpec>rootCollection:wbc:ins</setSpec> 	    </header>
+		<metadata>
+	<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:title xml:lang="pl"><![CDATA[Kodeks Dyplomatyczny Wielkopolski T.2 Zawiera numera 617-1292 lata 1288-1349]]></dc:title>
+<dc:subject xml:lang="pl"><![CDATA[Wielkopolska]]></dc:subject>
+<dc:subject xml:lang="pl"><![CDATA[średniowiecze]]></dc:subject>
+<dc:subject xml:lang="pl"><![CDATA[dokumenty]]></dc:subject>
+<dc:subject xml:lang="pl"><![CDATA[kodeks dyplomatyczny]]></dc:subject>
+<dc:subject xml:lang="pl"><![CDATA[dyplomy]]></dc:subject>
+<dc:subject xml:lang="pl"><![CDATA[źródła]]></dc:subject>
+<dc:description xml:lang="pl"><![CDATA[edycja elektroniczna]]></dc:description>
+<dc:publisher><![CDATA[Poznań]]></dc:publisher>
+<dc:publisher><![CDATA[Nakładem Biblioteki Kórnickiej]]></dc:publisher>
+<dc:date><![CDATA[1878]]></dc:date>
+<dc:type xml:lang="pl"><![CDATA[kodeks dyplomatyczny]]></dc:type>
+<dc:format xml:lang="pl"><![CDATA[text/html]]></dc:format>
+<dc:identifier><![CDATA[https://www.wbc.poznan.pl/dlibra/publication/edition/20067/content]]></dc:identifier>
+<dc:identifier><![CDATA[oai:www.wbc.poznan.pl:20067]]></dc:identifier>
+<dc:source xml:lang="pl"><![CDATA[PAN Biblioteka Kórnicka]]></dc:source>
+<dc:relation><![CDATA[Kodeks Dyplomatyczny Wielkopolski]]></dc:relation>
+<dc:relation><![CDATA[oai:www.wbc.poznan.pl:publication:12462]]></dc:relation>
+<dc:rights xml:lang="pl"><![CDATA[PAN Biblioteka Kórnicka]]></dc:rights>
+</oai_dc:dc>
+
+</metadata>
+	  </record>
+  <record>
+	<header>
+		<identifier>oai:www.wbc.poznan.pl:19807</identifier>
+	    <datestamp>2006-01-25T15:06:48Z</datestamp>
+		  <setSpec>rootCollection:wbc:ins:bkpan</setSpec> 	      <setSpec>rootCollection</setSpec> 	      <setSpec>rootCollection:wbc</setSpec> 	      <setSpec>rootCollection:wbc:DigitalLibraryOfWielkopolska</setSpec> 	      <setSpec>rootCollection:wbc:DigitalLibraryOfWielkopolska:RegionalMaterials</setSpec> 	      <setSpec>rootCollection:wbc:ins</setSpec> 	    </header>
+		<metadata>
+	<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:title xml:lang="pl"><![CDATA[Kościół p. w. św. Michała w Gołaszynie]]></dc:title>
+<dc:subject xml:lang="pl"><![CDATA[Gołaszyn]]></dc:subject>
+<dc:subject xml:lang="pl"><![CDATA[gm. Bojanowo]]></dc:subject>
+<dc:description xml:lang="pl"><![CDATA[sygn.CD241]]></dc:description>
+<dc:description xml:lang="pl"><![CDATA[nr inwen.0095]]></dc:description>
+<dc:type xml:lang="pl"><![CDATA[pocztówki]]></dc:type>
+<dc:format xml:lang="pl"><![CDATA[image/x.djvu]]></dc:format>
+<dc:identifier><![CDATA[https://www.wbc.poznan.pl/dlibra/publication/edition/19807/content]]></dc:identifier>
+<dc:identifier><![CDATA[oai:www.wbc.poznan.pl:19807]]></dc:identifier>
+<dc:source xml:lang="pl"><![CDATA[PAN Biblioteka Kórnicka]]></dc:source>
+<dc:relation><![CDATA[oai:www.wbc.poznan.pl:publication:12220]]></dc:relation>
+<dc:rights xml:lang="pl"><![CDATA[PAN Biblioteka Kórnicka]]></dc:rights>
+</oai_dc:dc>
+
+</metadata>
+	  </record>
+  <record>
+	<header>
+		<identifier>oai:www.wbc.poznan.pl:20085</identifier>
+	    <datestamp>2006-01-27T12:13:19Z</datestamp>
+		  <setSpec>rootCollection:wbc:DigitalLibraryOfWielkopolska:CulturalHeritage</setSpec> 	      <setSpec>rootCollection:wbc:ins:bkpan</setSpec> 	      <setSpec>rootCollection</setSpec> 	      <setSpec>rootCollection:wbc</setSpec> 	      <setSpec>rootCollection:wbc:DigitalLibraryOfWielkopolska</setSpec> 	      <setSpec>rootCollection:wbc:DigitalLibraryOfWielkopolska:RegionalMaterials</setSpec> 	      <setSpec>rootCollection:wbc:ins</setSpec> 	    </header>
+		<metadata>
+	<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:title xml:lang="pl"><![CDATA[Kodeks Dyplomatyczny Wielkopolski T.3 Zawiera numera 1293-2053 lata 1350-1399]]></dc:title>
+<dc:subject xml:lang="pl"><![CDATA[Wielkopolska]]></dc:subject>
+<dc:subject xml:lang="pl"><![CDATA[średniowiecze]]></dc:subject>
+<dc:subject xml:lang="pl"><![CDATA[dokumenty]]></dc:subject>
+<dc:subject xml:lang="pl"><![CDATA[kodeks dyplomatyczny]]></dc:subject>
+<dc:subject xml:lang="pl"><![CDATA[dyplomy]]></dc:subject>
+<dc:subject xml:lang="pl"><![CDATA[źródła]]></dc:subject>
+<dc:description xml:lang="pl"><![CDATA[edycja elektroniczna]]></dc:description>
+<dc:publisher><![CDATA[Poznań]]></dc:publisher>
+<dc:publisher><![CDATA[Nakładem Biblioteki Kórnickiej]]></dc:publisher>
+<dc:date><![CDATA[1879]]></dc:date>
+<dc:type xml:lang="pl"><![CDATA[kodeks dyplomatyczny]]></dc:type>
+<dc:format xml:lang="pl"><![CDATA[text/html]]></dc:format>
+<dc:identifier><![CDATA[https://www.wbc.poznan.pl/dlibra/publication/edition/20085/content]]></dc:identifier>
+<dc:identifier><![CDATA[oai:www.wbc.poznan.pl:20085]]></dc:identifier>
+<dc:source xml:lang="pl"><![CDATA[PAN Biblioteka Kórnicka]]></dc:source>
+<dc:relation><![CDATA[Kodeks Dyplomatyczny Wielkopolski]]></dc:relation>
+<dc:relation><![CDATA[oai:www.wbc.poznan.pl:publication:12472]]></dc:relation>
+<dc:rights xml:lang="pl"><![CDATA[PAN Biblioteka Kórnicka]]></dc:rights>
+</oai_dc:dc>
+
+</metadata>
+	  </record>
+  <record>
+	<header>
+		<identifier>oai:www.wbc.poznan.pl:21001</identifier>
+	    <datestamp>2006-02-07T14:20:21Z</datestamp>
+		  <setSpec>rootCollection:wbc:DigitalLibraryOfWielkopolska:CulturalHeritage</setSpec> 	      <setSpec>rootCollection:wbc:ins:bkpan</setSpec> 	      <setSpec>rootCollection</setSpec> 	      <setSpec>rootCollection:wbc</setSpec> 	      <setSpec>rootCollection:wbc:DigitalLibraryOfWielkopolska</setSpec> 	      <setSpec>rootCollection:wbc:ins</setSpec> 	    </header>
+		<metadata>
+	<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:title xml:lang="pl"><![CDATA[Scriptores Rerum Prussicarum T.2]]></dc:title>
+<dc:subject xml:lang="pl"><![CDATA[Prusy]]></dc:subject>
+<dc:subject xml:lang="pl"><![CDATA[średniowiecze]]></dc:subject>
+<dc:subject xml:lang="pl"><![CDATA[krzyżacy]]></dc:subject>
+<dc:description xml:lang="pl"><![CDATA[28cm]]></dc:description>
+<dc:description xml:lang="pl"><![CDATA[depozyt Biblioteki Instytutu Zachodniego]]></dc:description>
+<dc:description xml:lang="pl"><![CDATA[sygn.I50450]]></dc:description>
+<dc:description xml:lang="pl"><![CDATA[s.872]]></dc:description>
+<dc:publisher><![CDATA[Verlag von S. Hirzel]]></dc:publisher>
+<dc:publisher><![CDATA[Leipzig]]></dc:publisher>
+<dc:contributor><![CDATA[Theodor Hirsch (wyd.)]]></dc:contributor>
+<dc:contributor><![CDATA[Max Töppen (wyd.)]]></dc:contributor>
+<dc:contributor><![CDATA[Ernst Strehlke (wyd.)]]></dc:contributor>
+<dc:date><![CDATA[1863]]></dc:date>
+<dc:type xml:lang="pl"><![CDATA[źródło]]></dc:type>
+<dc:format xml:lang="pl"><![CDATA[image/x.djvu]]></dc:format>
+<dc:identifier><![CDATA[https://www.wbc.poznan.pl/dlibra/publication/edition/21001/content]]></dc:identifier>
+<dc:identifier><![CDATA[oai:www.wbc.poznan.pl:21001]]></dc:identifier>
+<dc:source xml:lang="pl"><![CDATA[PAN Biblioteka Kórnicka]]></dc:source>
+<dc:language><![CDATA[ger]]></dc:language>
+<dc:language><![CDATA[lat]]></dc:language>
+<dc:relation><![CDATA[Scriptores Rerum Prussicarum]]></dc:relation>
+<dc:relation><![CDATA[oai:www.wbc.poznan.pl:publication:13116]]></dc:relation>
+<dc:rights xml:lang="pl"><![CDATA[PAN Biblioteka Kórnicka]]></dc:rights>
+</oai_dc:dc>
+
+</metadata>
+	  </record>
+  <record>
+	<header>
+		<identifier>oai:www.wbc.poznan.pl:20103</identifier>
+	    <datestamp>2006-01-27T12:48:11Z</datestamp>
+		  <setSpec>rootCollection:wbc:DigitalLibraryOfWielkopolska:CulturalHeritage</setSpec> 	      <setSpec>rootCollection:wbc:ins:bkpan</setSpec> 	      <setSpec>rootCollection</setSpec> 	      <setSpec>rootCollection:wbc</setSpec> 	      <setSpec>rootCollection:wbc:DigitalLibraryOfWielkopolska</setSpec> 	      <setSpec>rootCollection:wbc:DigitalLibraryOfWielkopolska:RegionalMaterials</setSpec> 	      <setSpec>rootCollection:wbc:ins</setSpec> 	    </header>
+		<metadata>
+	<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:title xml:lang="pl"><![CDATA[Kodeks Dyplomatyczny Wielkopolski T.5 Zawierający dokumenta z lat 1400-1444]]></dc:title>
+<dc:subject xml:lang="pl"><![CDATA[Wielkopolska]]></dc:subject>
+<dc:subject xml:lang="pl"><![CDATA[średniowiecze]]></dc:subject>
+<dc:subject xml:lang="pl"><![CDATA[dokumenty]]></dc:subject>
+<dc:subject xml:lang="pl"><![CDATA[kodeks dyplomatyczny]]></dc:subject>
+<dc:subject xml:lang="pl"><![CDATA[dyplomy]]></dc:subject>
+<dc:subject xml:lang="pl"><![CDATA[źródła]]></dc:subject>
+<dc:description xml:lang="pl"><![CDATA[edycja elektroniczna]]></dc:description>
+<dc:publisher><![CDATA[Poznań]]></dc:publisher>
+<dc:publisher><![CDATA[Nakładem Fundacyi Norberta Bredkrajcza]]></dc:publisher>
+<dc:contributor><![CDATA[Franciszek Piekosiński (red.)]]></dc:contributor>
+<dc:date><![CDATA[1908]]></dc:date>
+<dc:type xml:lang="pl"><![CDATA[kodeks dyplomatyczny]]></dc:type>
+<dc:format xml:lang="pl"><![CDATA[text/html]]></dc:format>
+<dc:identifier><![CDATA[https://www.wbc.poznan.pl/dlibra/publication/edition/20103/content]]></dc:identifier>
+<dc:identifier><![CDATA[oai:www.wbc.poznan.pl:20103]]></dc:identifier>
+<dc:source xml:lang="pl"><![CDATA[PAN Biblioteka Kórnicka]]></dc:source>
+<dc:relation><![CDATA[Kodeks Dyplomatyczny Wielkopolski]]></dc:relation>
+<dc:relation><![CDATA[oai:www.wbc.poznan.pl:publication:12498]]></dc:relation>
+<dc:rights xml:lang="pl"><![CDATA[PAN Biblioteka Kórnicka]]></dc:rights>
+</oai_dc:dc>
+
+</metadata>
+	  </record>
+  <record>
+	<header>
+		<identifier>oai:www.wbc.poznan.pl:20109</identifier>
+	    <datestamp>2006-01-27T12:57:46Z</datestamp>
+		  <setSpec>rootCollection:wbc:DigitalLibraryOfWielkopolska:CulturalHeritage</setSpec> 	      <setSpec>rootCollection:wbc:ins:bkpan</setSpec> 	      <setSpec>rootCollection</setSpec> 	      <setSpec>rootCollection:wbc</setSpec> 	      <setSpec>rootCollection:wbc:DigitalLibraryOfWielkopolska</setSpec> 	      <setSpec>rootCollection:wbc:DigitalLibraryOfWielkopolska:RegionalMaterials</setSpec> 	      <setSpec>rootCollection:wbc:ins</setSpec> 	    </header>
+		<metadata>
+	<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:title xml:lang="pl"><![CDATA[Kodeks Dyplomatyczny Wielkopolski T.6 Zawiera dokumenty nr 1-400 z lat 1174-1400]]></dc:title>
+<dc:subject xml:lang="pl"><![CDATA[Wielkopolska]]></dc:subject>
+<dc:subject xml:lang="pl"><![CDATA[średniowiecze]]></dc:subject>
+<dc:subject xml:lang="pl"><![CDATA[dokumenty]]></dc:subject>
+<dc:subject xml:lang="pl"><![CDATA[kodeks dyplomatyczny]]></dc:subject>
+<dc:subject xml:lang="pl"><![CDATA[dyplomy]]></dc:subject>
+<dc:subject xml:lang="pl"><![CDATA[źródła]]></dc:subject>
+<dc:description xml:lang="pl"><![CDATA[edycja elektroniczna]]></dc:description>
+<dc:publisher><![CDATA[Poznań]]></dc:publisher>
+<dc:publisher><![CDATA[Warszawa]]></dc:publisher>
+<dc:publisher><![CDATA[Państwowe Wydawnictwo Naukowe]]></dc:publisher>
+<dc:contributor><![CDATA[Antoni Gąsiorowski (red.)]]></dc:contributor>
+<dc:contributor><![CDATA[Henryk Kowalewicz (red.)]]></dc:contributor>
+<dc:date><![CDATA[1982]]></dc:date>
+<dc:type xml:lang="pl"><![CDATA[kodeks dyplomatyczny]]></dc:type>
+<dc:format xml:lang="pl"><![CDATA[text/html]]></dc:format>
+<dc:identifier><![CDATA[https://www.wbc.poznan.pl/dlibra/publication/edition/20109/content]]></dc:identifier>
+<dc:identifier><![CDATA[oai:www.wbc.poznan.pl:20109]]></dc:identifier>
+<dc:source xml:lang="pl"><![CDATA[PAN Biblioteka Kórnicka]]></dc:source>
+<dc:relation><![CDATA[Kodeks Dyplomatyczny Wielkopolski]]></dc:relation>
+<dc:relation><![CDATA[oai:www.wbc.poznan.pl:publication:12507]]></dc:relation>
+<dc:rights xml:lang="pl"><![CDATA[PAN Biblioteka Kórnicka]]></dc:rights>
+</oai_dc:dc>
+
+</metadata>
+	  </record>
+  <record>
+	<header>
+		<identifier>oai:www.wbc.poznan.pl:20111</identifier>
+	    <datestamp>2006-01-27T13:04:45Z</datestamp>
+		  <setSpec>rootCollection:wbc:DigitalLibraryOfWielkopolska:CulturalHeritage</setSpec> 	      <setSpec>rootCollection:wbc:ins:bkpan</setSpec> 	      <setSpec>rootCollection</setSpec> 	      <setSpec>rootCollection:wbc</setSpec> 	      <setSpec>rootCollection:wbc:DigitalLibraryOfWielkopolska</setSpec> 	      <setSpec>rootCollection:wbc:DigitalLibraryOfWielkopolska:RegionalMaterials</setSpec> 	      <setSpec>rootCollection:wbc:ins</setSpec> 	    </header>
+		<metadata>
+	<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:title xml:lang="pl"><![CDATA[Kodeks Dyplomatyczny Wielkopolski T.7 Zawiera dokumenty nr 401-773 z lat 1401-1415]]></dc:title>
+<dc:subject xml:lang="pl"><![CDATA[Wielkopolska]]></dc:subject>
+<dc:subject xml:lang="pl"><![CDATA[średniowiecze]]></dc:subject>
+<dc:subject xml:lang="pl"><![CDATA[dokumenty]]></dc:subject>
+<dc:subject xml:lang="pl"><![CDATA[kodeks dyplomatyczny]]></dc:subject>
+<dc:subject xml:lang="pl"><![CDATA[dyplomy]]></dc:subject>
+<dc:subject xml:lang="pl"><![CDATA[źródła]]></dc:subject>
+<dc:description xml:lang="pl"><![CDATA[edycja elektroniczna]]></dc:description>
+<dc:publisher><![CDATA[Poznań]]></dc:publisher>
+<dc:publisher><![CDATA[Warszawa]]></dc:publisher>
+<dc:publisher><![CDATA[Państwowe Wydawnictwo Naukowe]]></dc:publisher>
+<dc:contributor><![CDATA[Antoni Gąsiorowski (red.)]]></dc:contributor>
+<dc:contributor><![CDATA[Ryszard Walczak (red.)]]></dc:contributor>
+<dc:date><![CDATA[1985]]></dc:date>
+<dc:type xml:lang="pl"><![CDATA[kodeks dyplomatyczny]]></dc:type>
+<dc:format xml:lang="pl"><![CDATA[text/html]]></dc:format>
+<dc:identifier><![CDATA[https://www.wbc.poznan.pl/dlibra/publication/edition/20111/content]]></dc:identifier>
+<dc:identifier><![CDATA[oai:www.wbc.poznan.pl:20111]]></dc:identifier>
+<dc:source xml:lang="pl"><![CDATA[PAN Biblioteka Kórnicka]]></dc:source>
+<dc:relation><![CDATA[Kodeks Dyplomatyczny Wielkopolski]]></dc:relation>
+<dc:relation><![CDATA[oai:www.wbc.poznan.pl:publication:12514]]></dc:relation>
+<dc:rights xml:lang="pl"><![CDATA[PAN Biblioteka Kórnicka]]></dc:rights>
+</oai_dc:dc>
+
+</metadata>
+	  </record>
+  <record>
+	<header>
+		<identifier>oai:www.wbc.poznan.pl:21564</identifier>
+	    <datestamp>2006-02-13T08:01:28Z</datestamp>
+		  <setSpec>rootCollection:wbc:DigitalLibraryOfWielkopolska:CulturalHeritage</setSpec> 	      <setSpec>rootCollection:wbc:ins:bkpan</setSpec> 	      <setSpec>rootCollection</setSpec> 	      <setSpec>rootCollection:wbc</setSpec> 	      <setSpec>rootCollection:wbc:DigitalLibraryOfWielkopolska</setSpec> 	      <setSpec>rootCollection:wbc:ins</setSpec> 	    </header>
+		<metadata>
+	<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:title xml:lang="pl"><![CDATA[Huber, Max]]></dc:title>
+<dc:subject xml:lang="pl"><![CDATA[Liga Narodów]]></dc:subject>
+<dc:description xml:lang="pl"><![CDATA[portret]]></dc:description>
+<dc:description xml:lang="pl"><![CDATA[wizerunek]]></dc:description>
+<dc:type xml:lang="pl"><![CDATA[wizerunek]]></dc:type>
+<dc:format xml:lang="pl"><![CDATA[image/x.djvu]]></dc:format>
+<dc:identifier><![CDATA[https://www.wbc.poznan.pl/dlibra/publication/edition/21564/content]]></dc:identifier>
+<dc:identifier><![CDATA[oai:www.wbc.poznan.pl:21564]]></dc:identifier>
+<dc:source xml:lang="pl"><![CDATA[Annuaire de la Société des Nations 1920-1927]]></dc:source>
+<dc:source xml:lang="pl"><![CDATA[PAN Biblioteka Kórnicka]]></dc:source>
+<dc:relation><![CDATA[oai:www.wbc.poznan.pl:publication:13420]]></dc:relation>
+<dc:rights xml:lang="pl"><![CDATA[PAN Biblioteka Kórnicka]]></dc:rights>
+</oai_dc:dc>
+
+</metadata>
+	  </record>
+  <record>
+	<header>
+		<identifier>oai:www.wbc.poznan.pl:20113</identifier>
+	    <datestamp>2006-01-27T13:09:22Z</datestamp>
+		  <setSpec>rootCollection:wbc:DigitalLibraryOfWielkopolska:CulturalHeritage</setSpec> 	      <setSpec>rootCollection:wbc:ins:bkpan</setSpec> 	      <setSpec>rootCollection</setSpec> 	      <setSpec>rootCollection:wbc</setSpec> 	      <setSpec>rootCollection:wbc:DigitalLibraryOfWielkopolska</setSpec> 	      <setSpec>rootCollection:wbc:DigitalLibraryOfWielkopolska:RegionalMaterials</setSpec> 	      <setSpec>rootCollection:wbc:ins</setSpec> 	    </header>
+		<metadata>
+	<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:title xml:lang="pl"><![CDATA[Kodeks Dyplomatyczny Wielkopolski T.8 Zawiera dokumenty nr 774-1074 z lat 1416-1425]]></dc:title>
+<dc:subject xml:lang="pl"><![CDATA[Wielkopolska]]></dc:subject>
+<dc:subject xml:lang="pl"><![CDATA[średniowiecze]]></dc:subject>
+<dc:subject xml:lang="pl"><![CDATA[dokumenty]]></dc:subject>
+<dc:subject xml:lang="pl"><![CDATA[kodeks dyplomatyczny]]></dc:subject>
+<dc:subject xml:lang="pl"><![CDATA[dyplomy]]></dc:subject>
+<dc:subject xml:lang="pl"><![CDATA[źródła]]></dc:subject>
+<dc:description xml:lang="pl"><![CDATA[edycja elektroniczna]]></dc:description>
+<dc:publisher><![CDATA[Poznań]]></dc:publisher>
+<dc:publisher><![CDATA[Warszawa]]></dc:publisher>
+<dc:publisher><![CDATA[Państwowe Wydawnictwo Naukowe]]></dc:publisher>
+<dc:contributor><![CDATA[Antoni Gąsiorowski (red.)]]></dc:contributor>
+<dc:contributor><![CDATA[Tomasz Jasiński (red.)]]></dc:contributor>
+<dc:date><![CDATA[1989]]></dc:date>
+<dc:type xml:lang="pl"><![CDATA[kodeks dyplomatyczny]]></dc:type>
+<dc:format xml:lang="pl"><![CDATA[text/html]]></dc:format>
+<dc:identifier><![CDATA[https://www.wbc.poznan.pl/dlibra/publication/edition/20113/content]]></dc:identifier>
+<dc:identifier><![CDATA[oai:www.wbc.poznan.pl:20113]]></dc:identifier>
+<dc:source xml:lang="pl"><![CDATA[PAN Biblioteka Kórnicka]]></dc:source>
+<dc:relation><![CDATA[Kodeks Dyplomatyczny Wielkopolski]]></dc:relation>
+<dc:relation><![CDATA[oai:www.wbc.poznan.pl:publication:12515]]></dc:relation>
+<dc:rights xml:lang="pl"><![CDATA[PAN Biblioteka Kórnicka]]></dc:rights>
+</oai_dc:dc>
+
+</metadata>
+	  </record>
+  <record>
+	<header>
+		<identifier>oai:www.wbc.poznan.pl:20115</identifier>
+	    <datestamp>2006-01-27T14:04:56Z</datestamp>
+		  <setSpec>rootCollection:wbc:DigitalLibraryOfWielkopolska:CulturalHeritage</setSpec> 	      <setSpec>rootCollection:wbc:ins:bkpan</setSpec> 	      <setSpec>rootCollection</setSpec> 	      <setSpec>rootCollection:wbc</setSpec> 	      <setSpec>rootCollection:wbc:DigitalLibraryOfWielkopolska</setSpec> 	      <setSpec>rootCollection:wbc:DigitalLibraryOfWielkopolska:RegionalMaterials</setSpec> 	      <setSpec>rootCollection:wbc:ins</setSpec> 	    </header>
+		<metadata>
+	<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:title xml:lang="pl"><![CDATA[Kodeks Dyplomatyczny Wielkopolski T.9 Zawiera dokumenty nr 1075-1380 z lat 1426-1434]]></dc:title>
+<dc:subject xml:lang="pl"><![CDATA[Wielkopolska]]></dc:subject>
+<dc:subject xml:lang="pl"><![CDATA[średniowiecze]]></dc:subject>
+<dc:subject xml:lang="pl"><![CDATA[dokumenty]]></dc:subject>
+<dc:subject xml:lang="pl"><![CDATA[kodeks dyplomatyczny]]></dc:subject>
+<dc:subject xml:lang="pl"><![CDATA[dyplomy]]></dc:subject>
+<dc:subject xml:lang="pl"><![CDATA[źródła]]></dc:subject>
+<dc:description xml:lang="pl"><![CDATA[edycja elektroniczna]]></dc:description>
+<dc:publisher><![CDATA[Poznań]]></dc:publisher>
+<dc:publisher><![CDATA[Warszawa]]></dc:publisher>
+<dc:publisher><![CDATA[Państwowe Wydawnictwo Naukowe]]></dc:publisher>
+<dc:contributor><![CDATA[Antoni Gąsiorowski (red.)]]></dc:contributor>
+<dc:contributor><![CDATA[Tomasz Jasiński (red.)]]></dc:contributor>
+<dc:date><![CDATA[1990]]></dc:date>
+<dc:type xml:lang="pl"><![CDATA[kodeks dyplomatyczny]]></dc:type>
+<dc:format xml:lang="pl"><![CDATA[text/html]]></dc:format>
+<dc:identifier><![CDATA[https://www.wbc.poznan.pl/dlibra/publication/edition/20115/content]]></dc:identifier>
+<dc:identifier><![CDATA[oai:www.wbc.poznan.pl:20115]]></dc:identifier>
+<dc:source xml:lang="pl"><![CDATA[PAN Biblioteka Kórnicka]]></dc:source>
+<dc:relation><![CDATA[Kodeks Dyplomatyczny Wielkopolski]]></dc:relation>
+<dc:relation><![CDATA[oai:www.wbc.poznan.pl:publication:12516]]></dc:relation>
+<dc:rights xml:lang="pl"><![CDATA[PAN Biblioteka Kórnicka]]></dc:rights>
+</oai_dc:dc>
+
+</metadata>
+	  </record>
+  <record>
+	<header>
+		<identifier>oai:www.wbc.poznan.pl:20117</identifier>
+	    <datestamp>2006-01-27T14:08:17Z</datestamp>
+		  <setSpec>rootCollection:wbc:DigitalLibraryOfWielkopolska:CulturalHeritage</setSpec> 	      <setSpec>rootCollection:wbc:ins:bkpan</setSpec> 	      <setSpec>rootCollection</setSpec> 	      <setSpec>rootCollection:wbc</setSpec> 	      <setSpec>rootCollection:wbc:DigitalLibraryOfWielkopolska</setSpec> 	      <setSpec>rootCollection:wbc:DigitalLibraryOfWielkopolska:RegionalMaterials</setSpec> 	      <setSpec>rootCollection:wbc:ins</setSpec> 	    </header>
+		<metadata>
+	<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:title xml:lang="pl"><![CDATA[Kodeks Dyplomatyczny Wielkopolski T.10 Zawiera dokumenty nr 1381-1699 z lat 1435-1444]]></dc:title>
+<dc:subject xml:lang="pl"><![CDATA[Wielkopolska]]></dc:subject>
+<dc:subject xml:lang="pl"><![CDATA[średniowiecze]]></dc:subject>
+<dc:subject xml:lang="pl"><![CDATA[dokumenty]]></dc:subject>
+<dc:subject xml:lang="pl"><![CDATA[kodeks dyplomatyczny]]></dc:subject>
+<dc:subject xml:lang="pl"><![CDATA[dyplomy]]></dc:subject>
+<dc:subject xml:lang="pl"><![CDATA[źródła]]></dc:subject>
+<dc:description xml:lang="pl"><![CDATA[edycja elektroniczna]]></dc:description>
+<dc:publisher><![CDATA[Poznań]]></dc:publisher>
+<dc:publisher><![CDATA[Wydawnictwo Poznańskiego Towarzystwa Przyjaciół Nauk]]></dc:publisher>
+<dc:contributor><![CDATA[Antoni Gąsiorowski (red.)]]></dc:contributor>
+<dc:contributor><![CDATA[Tomasz Jasiński (red.)]]></dc:contributor>
+<dc:date><![CDATA[1993]]></dc:date>
+<dc:type xml:lang="pl"><![CDATA[kodeks dyplomatyczny]]></dc:type>
+<dc:format xml:lang="pl"><![CDATA[text/html]]></dc:format>
+<dc:identifier><![CDATA[https://www.wbc.poznan.pl/dlibra/publication/edition/20117/content]]></dc:identifier>
+<dc:identifier><![CDATA[oai:www.wbc.poznan.pl:20117]]></dc:identifier>
+<dc:source xml:lang="pl"><![CDATA[PAN Biblioteka Kórnicka]]></dc:source>
+<dc:relation><![CDATA[Kodeks Dyplomatyczny Wielkopolski]]></dc:relation>
+<dc:relation><![CDATA[oai:www.wbc.poznan.pl:publication:12517]]></dc:relation>
+<dc:rights xml:lang="pl"><![CDATA[PAN Biblioteka Kórnicka]]></dc:rights>
+</oai_dc:dc>
+
+</metadata>
+	  </record>
+  <record>
+	<header>
+		<identifier>oai:www.wbc.poznan.pl:21006</identifier>
+	    <datestamp>2006-02-07T14:32:03Z</datestamp>
+		  <setSpec>rootCollection:wbc:DigitalLibraryOfWielkopolska:CulturalHeritage</setSpec> 	      <setSpec>rootCollection:wbc:ins:bkpan</setSpec> 	      <setSpec>rootCollection</setSpec> 	      <setSpec>rootCollection:wbc</setSpec> 	      <setSpec>rootCollection:wbc:DigitalLibraryOfWielkopolska</setSpec> 	      <setSpec>rootCollection:wbc:ins</setSpec> 	    </header>
+		<metadata>
+	<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:title xml:lang="pl"><![CDATA[Scriptores Rerum Prussicarum T.5]]></dc:title>
+<dc:subject xml:lang="pl"><![CDATA[Prusy]]></dc:subject>
+<dc:subject xml:lang="pl"><![CDATA[średniowiecze]]></dc:subject>
+<dc:subject xml:lang="pl"><![CDATA[krzyżacy]]></dc:subject>
+<dc:description xml:lang="pl"><![CDATA[28cm]]></dc:description>
+<dc:description xml:lang="pl"><![CDATA[s.746]]></dc:description>
+<dc:publisher><![CDATA[Verlag von S. Hirzel]]></dc:publisher>
+<dc:publisher><![CDATA[Leipzig]]></dc:publisher>
+<dc:contributor><![CDATA[Theodor Hirsch (wyd.)]]></dc:contributor>
+<dc:contributor><![CDATA[Max Töppen (wyd.)]]></dc:contributor>
+<dc:contributor><![CDATA[Ernst Strehlke (wyd.)]]></dc:contributor>
+<dc:date><![CDATA[1874]]></dc:date>
+<dc:type xml:lang="pl"><![CDATA[źródło]]></dc:type>
+<dc:format xml:lang="pl"><![CDATA[image/x.djvu]]></dc:format>
+<dc:identifier><![CDATA[https://www.wbc.poznan.pl/dlibra/publication/edition/21006/content]]></dc:identifier>
+<dc:identifier><![CDATA[oai:www.wbc.poznan.pl:21006]]></dc:identifier>
+<dc:source xml:lang="pl"><![CDATA[PAN Biblioteka Kórnicka]]></dc:source>
+<dc:language><![CDATA[ger]]></dc:language>
+<dc:language><![CDATA[lat]]></dc:language>
+<dc:relation><![CDATA[Scriptores Rerum Prussicarum]]></dc:relation>
+<dc:relation><![CDATA[oai:www.wbc.poznan.pl:publication:13118]]></dc:relation>
+<dc:rights xml:lang="pl"><![CDATA[PAN Biblioteka Kórnicka]]></dc:rights>
+</oai_dc:dc>
+
+</metadata>
+	  </record>
+  <record>
+	<header>
+		<identifier>oai:www.wbc.poznan.pl:21568</identifier>
+	    <datestamp>2006-02-13T08:11:13Z</datestamp>
+		  <setSpec>rootCollection:wbc:DigitalLibraryOfWielkopolska:CulturalHeritage</setSpec> 	      <setSpec>rootCollection:wbc:ins:bkpan</setSpec> 	      <setSpec>rootCollection</setSpec> 	      <setSpec>rootCollection:wbc</setSpec> 	      <setSpec>rootCollection:wbc:DigitalLibraryOfWielkopolska</setSpec> 	      <setSpec>rootCollection:wbc:ins</setSpec> 	    </header>
+		<metadata>
+	<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:title xml:lang="pl"><![CDATA[Briand, Aristide (1862-1932)]]></dc:title>
+<dc:subject xml:lang="pl"><![CDATA[pakt Brianda-Kelloga 1925]]></dc:subject>
+<dc:subject xml:lang="pl"><![CDATA[pakt lokarneński 1925]]></dc:subject>
+<dc:subject xml:lang="pl"><![CDATA[pokojowa Nagroda Nobla 1926]]></dc:subject>
+<dc:description xml:lang="pl"><![CDATA[portret]]></dc:description>
+<dc:description xml:lang="pl"><![CDATA[wizerunek]]></dc:description>
+<dc:description xml:lang="pl"><![CDATA[premier Francji]]></dc:description>
+<dc:description xml:lang="pl"><![CDATA[minister spraw zagranicznych Francji]]></dc:description>
+<dc:type xml:lang="pl"><![CDATA[wizerunek]]></dc:type>
+<dc:format xml:lang="pl"><![CDATA[image/x.djvu]]></dc:format>
+<dc:identifier><![CDATA[https://www.wbc.poznan.pl/dlibra/publication/edition/21568/content]]></dc:identifier>
+<dc:identifier><![CDATA[oai:www.wbc.poznan.pl:21568]]></dc:identifier>
+<dc:source xml:lang="pl"><![CDATA[Annuaire de la Société des Nations 1929]]></dc:source>
+<dc:source xml:lang="pl"><![CDATA[PAN Biblioteka Kórnicka]]></dc:source>
+<dc:relation><![CDATA[oai:www.wbc.poznan.pl:publication:13422]]></dc:relation>
+<dc:rights xml:lang="pl"><![CDATA[PAN Biblioteka Kórnicka]]></dc:rights>
+</oai_dc:dc>
+
+</metadata>
+	  </record>
+  <record>
+	<header>
+		<identifier>oai:www.wbc.poznan.pl:21566</identifier>
+	    <datestamp>2006-02-13T08:07:51Z</datestamp>
+		  <setSpec>rootCollection:wbc:DigitalLibraryOfWielkopolska:CulturalHeritage</setSpec> 	      <setSpec>rootCollection:wbc:ins:bkpan</setSpec> 	      <setSpec>rootCollection</setSpec> 	      <setSpec>rootCollection:wbc</setSpec> 	      <setSpec>rootCollection:wbc:DigitalLibraryOfWielkopolska</setSpec> 	      <setSpec>rootCollection:wbc:ins</setSpec> 	    </header>
+		<metadata>
+	<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:title xml:lang="pl"><![CDATA[Drummond, Eric (1876-1951)]]></dc:title>
+<dc:subject xml:lang="pl"><![CDATA[Liga Narodów]]></dc:subject>
+<dc:description xml:lang="pl"><![CDATA[portret]]></dc:description>
+<dc:description xml:lang="pl"><![CDATA[wizerunek]]></dc:description>
+<dc:description xml:lang="pl"><![CDATA[sekretarz Ligi Narodów]]></dc:description>
+<dc:description xml:lang="pl"><![CDATA[urzędnik MSZ Wielkiej Brytanii]]></dc:description>
+<dc:type xml:lang="pl"><![CDATA[wizerunek]]></dc:type>
+<dc:format xml:lang="pl"><![CDATA[image/x.djvu]]></dc:format>
+<dc:identifier><![CDATA[https://www.wbc.poznan.pl/dlibra/publication/edition/21566/content]]></dc:identifier>
+<dc:identifier><![CDATA[oai:www.wbc.poznan.pl:21566]]></dc:identifier>
+<dc:source xml:lang="pl"><![CDATA[Annuaire de la Société des Nations 1920-1927]]></dc:source>
+<dc:source xml:lang="pl"><![CDATA[PAN Biblioteka Kórnicka]]></dc:source>
+<dc:relation><![CDATA[oai:www.wbc.poznan.pl:publication:13421]]></dc:relation>
+<dc:rights xml:lang="pl"><![CDATA[PAN Biblioteka Kórnicka]]></dc:rights>
+</oai_dc:dc>
+
+</metadata>
+	  </record>
+  <record>
+	<header>
+		<identifier>oai:www.wbc.poznan.pl:20998</identifier>
+	    <datestamp>2006-02-07T14:20:12Z</datestamp>
+		  <setSpec>rootCollection:wbc:DigitalLibraryOfWielkopolska:CulturalHeritage</setSpec> 	      <setSpec>rootCollection:wbc:ins:bkpan</setSpec> 	      <setSpec>rootCollection</setSpec> 	      <setSpec>rootCollection:wbc</setSpec> 	      <setSpec>rootCollection:wbc:DigitalLibraryOfWielkopolska</setSpec> 	      <setSpec>rootCollection:wbc:ins</setSpec> 	    </header>
+		<metadata>
+	<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:title xml:lang="pl"><![CDATA[Scriptores Rerum Prussicarum T.1]]></dc:title>
+<dc:subject xml:lang="pl"><![CDATA[Prusy]]></dc:subject>
+<dc:subject xml:lang="pl"><![CDATA[średniowiecze]]></dc:subject>
+<dc:subject xml:lang="pl"><![CDATA[krzyżacy]]></dc:subject>
+<dc:subject xml:lang="pl"><![CDATA[Peter von Dusburg]]></dc:subject>
+<dc:subject xml:lang="pl"><![CDATA[Chronicon Terrae Prussiae]]></dc:subject>
+<dc:subject xml:lang="pl"><![CDATA[Petrus de Dusburg]]></dc:subject>
+<dc:subject xml:lang="pl"><![CDATA[Cronica Terre Prussie]]></dc:subject>
+<dc:subject xml:lang="pl"><![CDATA[Kronike von Pruzinlant]]></dc:subject>
+<dc:subject xml:lang="pl"><![CDATA[Nicolaus von Jeroschin]]></dc:subject>
+<dc:subject xml:lang="pl"><![CDATA[De prima fundatione monasterii Olivae]]></dc:subject>
+<dc:description xml:lang="pl"><![CDATA[28cm]]></dc:description>
+<dc:description xml:lang="pl"><![CDATA[depozyt Biblioteki Instytutu Zachodniego]]></dc:description>
+<dc:description xml:lang="pl"><![CDATA[sygn.I50450]]></dc:description>
+<dc:description xml:lang="pl"><![CDATA[s.830]]></dc:description>
+<dc:publisher><![CDATA[Verlag von S. Hirzel]]></dc:publisher>
+<dc:publisher><![CDATA[Leipzig]]></dc:publisher>
+<dc:contributor><![CDATA[Theodor Hirsch (wyd.)]]></dc:contributor>
+<dc:contributor><![CDATA[Max Töppen (wyd.)]]></dc:contributor>
+<dc:contributor><![CDATA[Ernst Strehlke (wyd.)]]></dc:contributor>
+<dc:date><![CDATA[1861]]></dc:date>
+<dc:type xml:lang="pl"><![CDATA[źródło]]></dc:type>
+<dc:format xml:lang="pl"><![CDATA[image/x.djvu]]></dc:format>
+<dc:identifier><![CDATA[https://www.wbc.poznan.pl/dlibra/publication/edition/20998/content]]></dc:identifier>
+<dc:identifier><![CDATA[oai:www.wbc.poznan.pl:20998]]></dc:identifier>
+<dc:source xml:lang="pl"><![CDATA[PAN Biblioteka Kórnicka]]></dc:source>
+<dc:language><![CDATA[ger]]></dc:language>
+<dc:language><![CDATA[lat]]></dc:language>
+<dc:relation><![CDATA[Scriptores Rerum Prussicarum]]></dc:relation>
+<dc:relation><![CDATA[oai:www.wbc.poznan.pl:publication:13115]]></dc:relation>
+<dc:rights xml:lang="pl"><![CDATA[PAN Biblioteka Kórnicka]]></dc:rights>
+</oai_dc:dc>
+
+</metadata>
+	  </record>
+  <record>
+	<header>
+		<identifier>oai:www.wbc.poznan.pl:20119</identifier>
+	    <datestamp>2006-01-27T14:09:54Z</datestamp>
+		  <setSpec>rootCollection:wbc:DigitalLibraryOfWielkopolska:CulturalHeritage</setSpec> 	      <setSpec>rootCollection:wbc:ins:bkpan</setSpec> 	      <setSpec>rootCollection</setSpec> 	      <setSpec>rootCollection:wbc</setSpec> 	      <setSpec>rootCollection:wbc:DigitalLibraryOfWielkopolska</setSpec> 	      <setSpec>rootCollection:wbc:DigitalLibraryOfWielkopolska:RegionalMaterials</setSpec> 	      <setSpec>rootCollection:wbc:ins</setSpec> 	    </header>
+		<metadata>
+	<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:title xml:lang="pl"><![CDATA[Kodeks Dyplomatyczny Wielkopolski T.11 Zawiera suplementy (dokumenty nr 1700-2023 z lat 1225-1444) oraz erratę i indeksy do tomów VI-XI]]></dc:title>
+<dc:subject xml:lang="pl"><![CDATA[Wielkopolska]]></dc:subject>
+<dc:subject xml:lang="pl"><![CDATA[średniowiecze]]></dc:subject>
+<dc:subject xml:lang="pl"><![CDATA[dokumenty]]></dc:subject>
+<dc:subject xml:lang="pl"><![CDATA[kodeks dyplomatyczny]]></dc:subject>
+<dc:subject xml:lang="pl"><![CDATA[dyplomy]]></dc:subject>
+<dc:subject xml:lang="pl"><![CDATA[źródła]]></dc:subject>
+<dc:description xml:lang="pl"><![CDATA[edycja elektroniczna]]></dc:description>
+<dc:publisher><![CDATA[Poznań]]></dc:publisher>
+<dc:publisher><![CDATA[Wydawnictwo Poznańskiego Towarzystwa Przyjaciół Nauk]]></dc:publisher>
+<dc:contributor><![CDATA[Antoni Gąsiorowski (red.)]]></dc:contributor>
+<dc:contributor><![CDATA[Tomasz Jasiński (red.)]]></dc:contributor>
+<dc:contributor><![CDATA[Tomasz Jurek (red.)]]></dc:contributor>
+<dc:contributor><![CDATA[Izabela Skierska (red.)]]></dc:contributor>
+<dc:date><![CDATA[1999]]></dc:date>
+<dc:type xml:lang="pl"><![CDATA[kodeks dyplomatyczny]]></dc:type>
+<dc:format xml:lang="pl"><![CDATA[text/html]]></dc:format>
+<dc:identifier><![CDATA[https://www.wbc.poznan.pl/dlibra/publication/edition/20119/content]]></dc:identifier>
+<dc:identifier><![CDATA[oai:www.wbc.poznan.pl:20119]]></dc:identifier>
+<dc:source xml:lang="pl"><![CDATA[PAN Biblioteka Kórnicka]]></dc:source>
+<dc:relation><![CDATA[Kodeks Dyplomatyczny Wielkopolski]]></dc:relation>
+<dc:relation><![CDATA[oai:www.wbc.poznan.pl:publication:12518]]></dc:relation>
+<dc:rights xml:lang="pl"><![CDATA[PAN Biblioteka Kórnicka]]></dc:rights>
+</oai_dc:dc>
+
+</metadata>
+	  </record>
+  <record>
+	<header>
+		<identifier>oai:www.wbc.poznan.pl:20663</identifier>
+	    <datestamp>2006-02-02T07:51:10Z</datestamp>
+		  <setSpec>rootCollection:wbc:ins:bkpan</setSpec> 	      <setSpec>rootCollection</setSpec> 	      <setSpec>rootCollection:wbc</setSpec> 	      <setSpec>rootCollection:wbc:DigitalLibraryOfWielkopolska</setSpec> 	      <setSpec>rootCollection:wbc:DigitalLibraryOfWielkopolska:RegionalMaterials</setSpec> 	      <setSpec>rootCollection:wbc:ins</setSpec> 	    </header>
+		<metadata>
+	<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:title xml:lang="pl"><![CDATA[Kościół p. w.  Św. Anny w Bralinie]]></dc:title>
+<dc:description xml:lang="pl"><![CDATA[sygn.CD241]]></dc:description>
+<dc:description xml:lang="pl"><![CDATA[nr inwen.1170]]></dc:description>
+<dc:publisher><![CDATA[T. Godzina]]></dc:publisher>
+<dc:publisher><![CDATA[Bralin]]></dc:publisher>
+<dc:date><![CDATA[1910-1920]]></dc:date>
+<dc:type xml:lang="pl"><![CDATA[pocztówki]]></dc:type>
+<dc:format xml:lang="pl"><![CDATA[image/x.djvu]]></dc:format>
+<dc:identifier><![CDATA[https://www.wbc.poznan.pl/dlibra/publication/edition/20663/content]]></dc:identifier>
+<dc:identifier><![CDATA[oai:www.wbc.poznan.pl:20663]]></dc:identifier>
+<dc:source xml:lang="pl"><![CDATA[PAN Biblioteka Kórnicka]]></dc:source>
+<dc:relation><![CDATA[oai:www.wbc.poznan.pl:publication:12898]]></dc:relation>
+<dc:rights xml:lang="pl"><![CDATA[PAN Biblioteka Kórnicka]]></dc:rights>
+</oai_dc:dc>
+
+</metadata>
+	  </record>
+  <record>
+	<header>
+		<identifier>oai:www.wbc.poznan.pl:21000</identifier>
+	    <datestamp>2006-02-07T14:21:14Z</datestamp>
+		  <setSpec>rootCollection:wbc:DigitalLibraryOfWielkopolska:CulturalHeritage</setSpec> 	      <setSpec>rootCollection:wbc:ins:bkpan</setSpec> 	      <setSpec>rootCollection</setSpec> 	      <setSpec>rootCollection:wbc</setSpec> 	      <setSpec>rootCollection:wbc:DigitalLibraryOfWielkopolska</setSpec> 	      <setSpec>rootCollection:wbc:ins</setSpec> 	    </header>
+		<metadata>
+	<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:title xml:lang="pl"><![CDATA[Scriptores Rerum Prussicarum T.3]]></dc:title>
+<dc:subject xml:lang="pl"><![CDATA[Prusy]]></dc:subject>
+<dc:subject xml:lang="pl"><![CDATA[średniowiecze]]></dc:subject>
+<dc:subject xml:lang="pl"><![CDATA[krzyżacy]]></dc:subject>
+<dc:description xml:lang="pl"><![CDATA[28cm]]></dc:description>
+<dc:description xml:lang="pl"><![CDATA[sygn.31935]]></dc:description>
+<dc:publisher><![CDATA[Verlag von S. Hirzel]]></dc:publisher>
+<dc:publisher><![CDATA[Leipzig]]></dc:publisher>
+<dc:contributor><![CDATA[Theodor Hirsch (wyd.)]]></dc:contributor>
+<dc:contributor><![CDATA[Max Töppen (wyd.)]]></dc:contributor>
+<dc:contributor><![CDATA[Ernst Strehlke (wyd.)]]></dc:contributor>
+<dc:date><![CDATA[1866]]></dc:date>
+<dc:type xml:lang="pl"><![CDATA[źródło]]></dc:type>
+<dc:format xml:lang="pl"><![CDATA[image/x.djvu]]></dc:format>
+<dc:identifier><![CDATA[https://www.wbc.poznan.pl/dlibra/publication/edition/21000/content]]></dc:identifier>
+<dc:identifier><![CDATA[oai:www.wbc.poznan.pl:21000]]></dc:identifier>
+<dc:source xml:lang="pl"><![CDATA[PAN Biblioteka Kórnicka]]></dc:source>
+<dc:language><![CDATA[ger]]></dc:language>
+<dc:language><![CDATA[lat]]></dc:language>
+<dc:relation><![CDATA[Scriptores Rerum Prussicarum]]></dc:relation>
+<dc:relation><![CDATA[oai:www.wbc.poznan.pl:publication:13117]]></dc:relation>
+<dc:rights xml:lang="pl"><![CDATA[PAN Biblioteka Kórnicka]]></dc:rights>
+</oai_dc:dc>
+
+</metadata>
+	  </record>
+  <record>
+	<header>
+		<identifier>oai:www.wbc.poznan.pl:21007</identifier>
+	    <datestamp>2006-02-07T14:32:45Z</datestamp>
+		  <setSpec>rootCollection:wbc:DigitalLibraryOfWielkopolska:CulturalHeritage</setSpec> 	      <setSpec>rootCollection:wbc:ins:bkpan</setSpec> 	      <setSpec>rootCollection</setSpec> 	      <setSpec>rootCollection:wbc</setSpec> 	      <setSpec>rootCollection:wbc:DigitalLibraryOfWielkopolska</setSpec> 	      <setSpec>rootCollection:wbc:ins</setSpec> 	    </header>
+		<metadata>
+	<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:title xml:lang="pl"><![CDATA[Scriptores Rerum Prussicarum T.4]]></dc:title>
+<dc:subject xml:lang="pl"><![CDATA[Prusy]]></dc:subject>
+<dc:subject xml:lang="pl"><![CDATA[średniowiecze]]></dc:subject>
+<dc:subject xml:lang="pl"><![CDATA[krzyżacy]]></dc:subject>
+<dc:description xml:lang="pl"><![CDATA[28cm]]></dc:description>
+<dc:description xml:lang="pl"><![CDATA[s.810]]></dc:description>
+<dc:publisher><![CDATA[Verlag von S. Hirzel]]></dc:publisher>
+<dc:publisher><![CDATA[Leipzig]]></dc:publisher>
+<dc:contributor><![CDATA[Theodor Hirsch (wyd.)]]></dc:contributor>
+<dc:contributor><![CDATA[Max Töppen (wyd.)]]></dc:contributor>
+<dc:contributor><![CDATA[Ernst Strehlke (wyd.)]]></dc:contributor>
+<dc:date><![CDATA[1870]]></dc:date>
+<dc:type xml:lang="pl"><![CDATA[źródło]]></dc:type>
+<dc:format xml:lang="pl"><![CDATA[image/x.djvu]]></dc:format>
+<dc:identifier><![CDATA[https://www.wbc.poznan.pl/dlibra/publication/edition/21007/content]]></dc:identifier>
+<dc:identifier><![CDATA[oai:www.wbc.poznan.pl:21007]]></dc:identifier>
+<dc:source xml:lang="pl"><![CDATA[PAN Biblioteka Kórnicka]]></dc:source>
+<dc:language><![CDATA[ger]]></dc:language>
+<dc:language><![CDATA[lat]]></dc:language>
+<dc:relation><![CDATA[Scriptores Rerum Prussicarum]]></dc:relation>
+<dc:relation><![CDATA[oai:www.wbc.poznan.pl:publication:13119]]></dc:relation>
+<dc:rights xml:lang="pl"><![CDATA[PAN Biblioteka Kórnicka]]></dc:rights>
+</oai_dc:dc>
+
+</metadata>
+	  </record>
+  <record>
+	<header>
+		<identifier>oai:www.wbc.poznan.pl:21570</identifier>
+	    <datestamp>2006-02-13T08:27:05Z</datestamp>
+		  <setSpec>rootCollection:wbc:DigitalLibraryOfWielkopolska:CulturalHeritage</setSpec> 	      <setSpec>rootCollection:wbc:ins:bkpan</setSpec> 	      <setSpec>rootCollection</setSpec> 	      <setSpec>rootCollection:wbc</setSpec> 	      <setSpec>rootCollection:wbc:DigitalLibraryOfWielkopolska</setSpec> 	      <setSpec>rootCollection:wbc:ins</setSpec> 	    </header>
+		<metadata>
+	<oai_dc:dc xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:oai_dc="http://www.openarchives.org/OAI/2.0/oai_dc/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd">
+<dc:title xml:lang="pl"><![CDATA[Procope, H. J.]]></dc:title>
+<dc:subject xml:lang="pl"><![CDATA[Liga Narodów]]></dc:subject>
+<dc:description xml:lang="pl"><![CDATA[portret]]></dc:description>
+<dc:description xml:lang="pl"><![CDATA[wizerunek]]></dc:description>
+<dc:type xml:lang="pl"><![CDATA[wizerunek]]></dc:type>
+<dc:format xml:lang="pl"><![CDATA[image/x.djvu]]></dc:format>
+<dc:identifier><![CDATA[https://www.wbc.poznan.pl/dlibra/publication/edition/21570/content]]></dc:identifier>
+<dc:identifier><![CDATA[oai:www.wbc.poznan.pl:21570]]></dc:identifier>
+<dc:source xml:lang="pl"><![CDATA[Annuaire de la Société des Nations 1929]]></dc:source>
+<dc:source xml:lang="pl"><![CDATA[PAN Biblioteka Kórnicka]]></dc:source>
+<dc:relation><![CDATA[oai:www.wbc.poznan.pl:publication:13423]]></dc:relation>
+<dc:rights xml:lang="pl"><![CDATA[PAN Biblioteka Kórnicka]]></dc:rights>
+</oai_dc:dc>
+
+</metadata>
+	  </record>
+  <resumptionToken completeListSize="462185" cursor="0" expirationDate="2026-07-24T18:35:51Z">2895D99B8F7DF438CD6A5796C52C7B80ListRecords1784909151306_DL_LAST_ITEM_20_DL_METADATA_oai_dc</resumptionToken>		</ListRecords>
+</OAI-PMH>

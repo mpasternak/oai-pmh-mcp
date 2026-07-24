@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OAI-PMH xmlns="http://www.openarchives.org/OAI/2.0/">
+  <responseDate>2026-07-24T10:00:00Z</responseDate>
+  <request>https://www.wbc.poznan.pl/dlibra/oai-pmh-repository.xml</request>
+  <error code="badArgument">The request includes illegal arguments.</error>
+</OAI-PMH>
