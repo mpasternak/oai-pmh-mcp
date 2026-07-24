@@ -105,6 +105,19 @@ async def test_harvest_terminates_on_token_without_records():
     assert "truncated" in out.lower()
 
 
+async def test_harvest_does_not_lose_records_mid_page():
+    # BLOCKER: strona ma 3 rekordy + token, max_records=2. Zwrócony token wskazuje
+    # KONIEC strony, więc przycięcie do 2 zgubiłoby rekord 3 przy wznowieniu.
+    # Poprawnie: zwróć wszystkie 3 (overshoot < 1 strona), token spójny.
+    client = FakeClient("list_records_three_plus_token.xml")
+    data = json.loads(await tools.harvest_records(client, BASE, max_records=2, format="json"))
+    ids = [r["identifier"] for r in data["records"]]
+    assert ids == ["rec:1", "rec:2", "rec:3"]  # rekord 3 NIE zniknął
+    assert data["truncated"] is True
+    assert data["resumption_token"] == "TOKEN-NEXT"
+    assert len(client.calls) == 1  # nie pobrał kolejnej strony (limit osiągnięty)
+
+
 async def test_harvest_caps_absurd_max_records():
     # DoS: model prosi o miliard rekordów -> twardy górny limit.
     client = FakeClient("list_records_page1.xml", "list_records_page2.xml")

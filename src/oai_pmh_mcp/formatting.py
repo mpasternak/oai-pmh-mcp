@@ -171,7 +171,7 @@ def format_metadata_formats(result: ListResult, fmt: str) -> str:
             {"prefix": f.prefix, "schema": f.schema, "namespace": f.metadata_namespace}
             for f in result.items
         ]
-        return _json({"formats": items})
+        return _json(_list_envelope(result, "formats", items))
     return _list_text(
         result,
         lambda f: _kv_block(

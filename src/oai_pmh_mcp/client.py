@@ -131,11 +131,11 @@ def _flatten_metadata(inner: etree._Element) -> dict[str, list[str]]:
         path = f"{prefix} > {name}" if prefix else name
         if children:
             for child in children:
-                walk(child, path if prefix else "")
+                walk(child, path)
         else:
             text = (el.text or "").strip()
             if text:
-                md.setdefault(name if not prefix else path, []).append(text)
+                md.setdefault(path, []).append(text)
 
     for child in (c for c in inner if isinstance(c.tag, str)):
         walk(child, "")
@@ -272,26 +272,34 @@ class OaiClient:
         attempts = 0
         while True:
             try:
-                resp = await self._client.get(base_url, params=query)
+                # Strumieniowo: liczymy bajty na bieżąco i przerywamy po limicie,
+                # by złośliwy serwer nie zbuforował gigabajtów do RAM.
+                async with self._client.stream("GET", base_url, params=query) as resp:
+                    if resp.status_code == 503 and attempts < MAX_RETRIES_503:
+                        attempts += 1
+                        await self._sleep(_retry_after_seconds(resp))
+                        continue
+                    if resp.status_code >= 400:
+                        raise OaiHttpError(
+                            f"Nie udało się połączyć z {base_url}: HTTP {resp.status_code}"
+                        )
+                    chunks: list[bytes] = []
+                    total = 0
+                    async for chunk in resp.aiter_bytes():
+                        total += len(chunk)
+                        if total > MAX_RESPONSE_BYTES:
+                            raise OaiHttpError(
+                                f"Odpowiedź z {base_url} przekracza limit {MAX_RESPONSE_BYTES} B."
+                            )
+                        chunks.append(chunk)
+                    return b"".join(chunks)
             except httpx.HTTPError as exc:
                 raise OaiHttpError(f"Nie udało się połączyć z {base_url}: {exc}") from exc
-            if resp.status_code == 503 and attempts < MAX_RETRIES_503:
-                attempts += 1
-                await self._sleep(_retry_after_seconds(resp))
-                continue
-            if resp.status_code >= 400:
-                raise OaiHttpError(f"Nie udało się połączyć z {base_url}: HTTP {resp.status_code}")
-            content = resp.content
-            if len(content) > MAX_RESPONSE_BYTES:
-                raise OaiHttpError(
-                    f"Odpowiedź z {base_url} przekracza limit {MAX_RESPONSE_BYTES} B."
-                )
-            return content
 
 
 def _retry_after_seconds(resp: httpx.Response) -> float:
     raw = resp.headers.get("Retry-After", "")
     try:
-        return min(float(raw), MAX_RETRY_WAIT)
+        return max(0.0, min(float(raw), MAX_RETRY_WAIT))
     except ValueError:
         return 5.0  # nagłówek w formacie daty lub brak — rozsądny domyślny odstęp

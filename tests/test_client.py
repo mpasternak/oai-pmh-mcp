@@ -69,6 +69,29 @@ def test_parse_list_records_keeps_raw_metadata_xml(fixture):
 # --- GetRecord ------------------------------------------------------------
 
 
+def test_flatten_nested_metadata_does_not_collide():
+    # WARTO: format zagnieżdżony (MODS-like). titleInfo/title i
+    # relatedItem/titleInfo/title NIE mogą trafić pod ten sam klucz.
+    payload = b"""<?xml version="1.0"?>
+    <OAI-PMH xmlns="http://www.openarchives.org/OAI/2.0/">
+      <GetRecord><record>
+        <header><identifier>x</identifier><datestamp>2020-01-01</datestamp></header>
+        <metadata>
+          <mods xmlns="http://www.loc.gov/mods/v3">
+            <titleInfo><title>Tytul glowny</title></titleInfo>
+            <relatedItem><titleInfo><title>Tytul serii</title></titleInfo></relatedItem>
+          </mods>
+        </metadata>
+      </record></GetRecord>
+    </OAI-PMH>"""
+    rec = client.parse_get_record(payload)
+    # oba tytuły muszą być rozróżnialne (różne klucze ścieżkowe)
+    all_values = [v for values in rec.metadata.values() for v in values]
+    assert "Tytul glowny" in all_values
+    assert "Tytul serii" in all_values
+    assert len(rec.metadata) >= 2  # nie sklejone w jeden klucz
+
+
 def test_parse_get_record_unescapes_entities(fixture):
     record = client.parse_get_record(fixture("get_record.xml"))
     assert record.metadata["title"] == ["Pan Tadeusz & inne utwory"]

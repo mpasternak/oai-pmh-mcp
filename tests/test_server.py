@@ -29,3 +29,12 @@ async def test_build_server_registers_all_seven_tools():
     mcp = server.build_server()
     names = {t.name for t in await mcp.list_tools()}
     assert names == EXPECTED_TOOLS
+
+
+async def test_list_records_tool_exposes_descriptive_params():
+    # Chroni mapowanie nazw widocznych dla modelu (prefix, date_from, date_until,
+    # set_spec) — literówka tutaj przeszłaby przez resztę testów.
+    mcp = server.build_server()
+    tool = next(t for t in await mcp.list_tools() if t.name == "list_records")
+    props = set(tool.inputSchema["properties"])
+    assert {"base_url", "prefix", "date_from", "date_until", "set_spec", "format"} <= props

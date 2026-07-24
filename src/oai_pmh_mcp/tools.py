@@ -22,6 +22,7 @@ VALID_FORMATS = {"text", "json", "xml"}
 # Twarde limity chroniące przed DoS (złośliwy/wadliwy serwer OAI-PMH).
 MAX_HARVEST_RECORDS = 10_000
 MAX_HARVEST_PAGES = 1_000
+MAX_HARVEST_BYTES = 50 * 1024 * 1024  # łączny limit pamięci harvestu (50 MB)
 
 
 def _check_format(fmt: str) -> None:
@@ -52,14 +53,14 @@ def _selective_params(metadata_prefix, from_, until, set_) -> dict:
 
 
 async def _fetch_list(
-    client, base_url, metadata_prefix, from_, until, set_, resumption_token
+    client, base_url, verb, metadata_prefix, from_, until, set_, resumption_token
 ) -> bytes:
     if resumption_token:
         params = {"resumptionToken": resumption_token}
     else:
         _validate_date_range(from_, until)
         params = _selective_params(metadata_prefix, from_, until, set_)
-    return await client.fetch(base_url, "ListRecords", params)
+    return await client.fetch(base_url, verb, params)
 
 
 # --- narzędzia ------------------------------------------------------------
@@ -107,12 +108,9 @@ async def list_identifiers(
     format: str = "text",
 ) -> str:
     _check_format(format)
-    if resumption_token:
-        params = {"resumptionToken": resumption_token}
-    else:
-        _validate_date_range(from_, until)
-        params = _selective_params(metadata_prefix, from_, until, set_)
-    data = await client.fetch(base_url, "ListIdentifiers", params)
+    data = await _fetch_list(
+        client, base_url, "ListIdentifiers", metadata_prefix, from_, until, set_, resumption_token
+    )
     if format == "xml":
         return data.decode("utf-8", errors="replace")
     return formatting.format_identifiers(client_module.parse_list_identifiers(data), format)
@@ -130,7 +128,7 @@ async def list_records(
 ) -> str:
     _check_format(format)
     data = await _fetch_list(
-        client, base_url, metadata_prefix, from_, until, set_, resumption_token
+        client, base_url, "ListRecords", metadata_prefix, from_, until, set_, resumption_token
     )
     if format == "xml":
         return data.decode("utf-8", errors="replace")
@@ -177,9 +175,13 @@ async def harvest_records(
     token = resumption_token
     last: ListResult | None = None
     pages = 0
+    total_bytes = 0
 
     while True:
-        data = await _fetch_list(client, base_url, metadata_prefix, from_, until, set_, token)
+        data = await _fetch_list(
+            client, base_url, "ListRecords", metadata_prefix, from_, until, set_, token
+        )
+        total_bytes += len(data)
         if format == "xml":
             raw_pages.append(data.decode("utf-8", errors="replace"))
         last = client_module.parse_list_records(data)
@@ -187,20 +189,27 @@ async def harvest_records(
         new_count = len(last.items)
         records.extend(last.items)
         token = last.resumption_token
-        # Stop: brak tokenu, osiągnięto limit, brak postępu (0 rekordów mimo tokenu
-        # = złośliwy/wadliwy serwer) albo twardy limit stron.
-        if not token or len(records) >= max_records or new_count == 0 or pages >= MAX_HARVEST_PAGES:
+        # Stop: brak tokenu; osiągnięto limit rekordów (NIE tniemy w środku strony
+        # — dopuszczamy overshoot < 1 strona, by zwrócony token był spójny i nie
+        # gubić rekordów przy wznowieniu); brak postępu (0 rekordów mimo tokenu =
+        # złośliwy/wadliwy serwer); twardy limit stron; limit łącznej pamięci.
+        if (
+            not token
+            or len(records) >= max_records
+            or new_count == 0
+            or pages >= MAX_HARVEST_PAGES
+            or total_bytes >= MAX_HARVEST_BYTES
+        ):
             break
 
-    truncated = len(records) > max_records or token is not None
-    returned = records[:max_records]
+    truncated = token is not None  # token nadal jest => zostało więcej rekordów
 
     if format == "xml":
         sep = "\n<!-- ===== następna strona OAI-PMH ===== -->\n"
         return sep.join(raw_pages)
 
     synth = ListResult(
-        items=returned,
+        items=records,
         resumption_token=token if truncated else None,
         complete_list_size=last.complete_list_size if last else None,
         cursor=last.cursor if last else None,

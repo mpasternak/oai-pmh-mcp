@@ -71,6 +71,22 @@ async def test_http_404_raises_http_error():
     await client.aclose()
 
 
+async def test_response_size_limit_enforced_while_streaming():
+    # BLOCKER: limit rozmiaru musi być egzekwowany strumieniowo, nie po
+    # zbuforowaniu całości. Odpowiedź > 10 MB -> błąd.
+    from oai_pmh_mcp.client import MAX_RESPONSE_BYTES
+
+    big = b"x" * (MAX_RESPONSE_BYTES + 1024)
+
+    def handler(request):
+        return httpx.Response(200, content=big)
+
+    client = make_client(handler, [])
+    with pytest.raises(OaiHttpError):
+        await client.fetch(BASE, "ListRecords", {})
+    await client.aclose()
+
+
 async def test_non_http_scheme_rejected():
     # SSRF/LFI: file://, gopher:// itp. nie mogą być pobierane.
     called = {"n": 0}
