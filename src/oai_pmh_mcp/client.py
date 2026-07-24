@@ -9,6 +9,7 @@ Retry-After i ekskluzywność resumptionToken.
 from __future__ import annotations
 
 import asyncio
+from urllib.parse import urlsplit
 
 import httpx
 from lxml import etree
@@ -34,6 +35,16 @@ _EMPTY_LIST = dict(
     resumption_token=None, complete_list_size=None, cursor=None, expiration_date=None
 )
 
+# Hartowany parser: bez rozwijania encji (XXE / billion laughs), bez sieci i bez
+# DTD. Chroni przy parsowaniu XML z dowolnych, niezaufanych repozytoriów.
+_SAFE_PARSER = etree.XMLParser(
+    resolve_entities=False,
+    no_network=True,
+    load_dtd=False,
+    dtd_validation=False,
+    huge_tree=False,
+)
+
 
 # --- parsowanie (czyste funkcje) -----------------------------------------
 
@@ -49,7 +60,7 @@ def _parse_root(data: bytes) -> etree._Element:
             "limit zapytań lub weryfikacja przeglądarki (anty-bot). Spróbuj później."
         )
     try:
-        root = etree.fromstring(data)
+        root = etree.fromstring(data, _SAFE_PARSER)
     except etree.XMLSyntaxError as exc:
         raise OaiParseError(f"Odpowiedź nie jest poprawnym XML: {exc}") from exc
     if etree.QName(root).localname != "OAI-PMH":
@@ -251,6 +262,12 @@ class OaiClient:
 
     async def fetch(self, base_url: str, verb: str, params: dict) -> bytes:
         """GET base_url z parametrami OAI-PMH; honoruje 503 + Retry-After."""
+        scheme = urlsplit(base_url).scheme.lower()
+        if scheme not in ("http", "https"):
+            raise OaiHttpError(
+                f"Niedozwolony schemat URL {scheme!r} — dozwolone tylko http/https "
+                f"(base_url: {base_url})."
+            )
         query = {"verb": verb, **{k: v for k, v in params.items() if v is not None}}
         attempts = 0
         while True:

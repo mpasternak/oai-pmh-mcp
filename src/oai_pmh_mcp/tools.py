@@ -19,6 +19,10 @@ from .models import ListResult
 
 VALID_FORMATS = {"text", "json", "xml"}
 
+# Twarde limity chroniące przed DoS (złośliwy/wadliwy serwer OAI-PMH).
+MAX_HARVEST_RECORDS = 10_000
+MAX_HARVEST_PAGES = 1_000
+
 
 def _check_format(fmt: str) -> None:
     if fmt not in VALID_FORMATS:
@@ -165,20 +169,27 @@ async def harvest_records(
     _check_format(format)
     if not resumption_token:
         _validate_date_range(from_, until)
+    # Cap na absurdalne max_records (model mógłby poprosić o miliard).
+    max_records = min(max(max_records, 1), MAX_HARVEST_RECORDS)
 
     records: list = []
     raw_pages: list[str] = []
     token = resumption_token
     last: ListResult | None = None
+    pages = 0
 
     while True:
         data = await _fetch_list(client, base_url, metadata_prefix, from_, until, set_, token)
         if format == "xml":
             raw_pages.append(data.decode("utf-8", errors="replace"))
         last = client_module.parse_list_records(data)
+        pages += 1
+        new_count = len(last.items)
         records.extend(last.items)
         token = last.resumption_token
-        if not token or len(records) >= max_records:
+        # Stop: brak tokenu, osiągnięto limit, brak postępu (0 rekordów mimo tokenu
+        # = złośliwy/wadliwy serwer) albo twardy limit stron.
+        if not token or len(records) >= max_records or new_count == 0 or pages >= MAX_HARVEST_PAGES:
             break
 
     truncated = len(records) > max_records or token is not None

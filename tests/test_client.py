@@ -124,6 +124,39 @@ def test_html_interstitial_gives_helpful_hint():
     assert "HTML" in str(exc.value)
 
 
+# --- bezpieczeństwo parsera XML (XXE / billion laughs) --------------------
+
+
+def test_external_entity_is_not_resolved(tmp_path):
+    # XXE: encja zewnętrzna wskazująca lokalny plik NIE może zostać wczytana.
+    secret = tmp_path / "secret.txt"
+    secret.write_text("TOPSECRET-XXE")
+    payload = f"""<?xml version="1.0"?>
+    <!DOCTYPE r [<!ENTITY xxe SYSTEM "file://{secret}">]>
+    <OAI-PMH xmlns="http://www.openarchives.org/OAI/2.0/">
+      <Identify><repositoryName>&xxe;</repositoryName></Identify>
+    </OAI-PMH>""".encode()
+    ident = client.parse_identify(payload)
+    assert "TOPSECRET-XXE" not in ident.repository_name
+
+
+def test_billion_laughs_does_not_blow_up():
+    # Bomba encyjna nie może rozwinąć się do gigantycznego ciągu.
+    bomb = b"""<?xml version="1.0"?>
+    <!DOCTYPE lolz [
+      <!ENTITY lol "lol">
+      <!ENTITY lol2 "&lol;&lol;&lol;&lol;&lol;&lol;&lol;&lol;&lol;&lol;">
+      <!ENTITY lol3 "&lol2;&lol2;&lol2;&lol2;&lol2;&lol2;&lol2;&lol2;&lol2;&lol2;">
+      <!ENTITY lol4 "&lol3;&lol3;&lol3;&lol3;&lol3;&lol3;&lol3;&lol3;&lol3;&lol3;">
+    ]>
+    <OAI-PMH xmlns="http://www.openarchives.org/OAI/2.0/">
+      <Identify><repositoryName>&lol4;</repositoryName></Identify>
+    </OAI-PMH>"""
+    ident = client.parse_identify(bomb)
+    # encje nierozwinięte -> krótka (lub pusta) wartość, brak eksplozji pamięci
+    assert len(ident.repository_name) < 1000
+
+
 # --- regresja na prawdziwej odpowiedzi WBC --------------------------------
 
 

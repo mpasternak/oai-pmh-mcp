@@ -1,5 +1,9 @@
 # oai-pmh-mcp
 
+[![CI](https://github.com/mpasternak/oai-pmh-mcp/actions/workflows/ci.yml/badge.svg)](https://github.com/mpasternak/oai-pmh-mcp/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Python 3.11+](https://img.shields.io/badge/python-3.11%2B-blue.svg)](https://www.python.org/)
+
 **Uniwersalny serwer [MCP](https://modelcontextprotocol.io/) dla protokołu
 [OAI-PMH](https://www.openarchives.org/pmh/)** (Open Archives Initiative –
 Protocol for Metadata Harvesting).
@@ -82,6 +86,18 @@ uv run ruff check .
 
 OAI-PMH to protokół **metadanych** — serwer nie pobiera treści obiektów
 (skanów, PDF-ów). To read-only, bez autoryzacji, bez cache.
+
+## Bezpieczeństwo
+
+- **Parsowanie XML jest hartowane** — parser nie rozwija encji ani nie sięga do
+  sieci/DTD (ochrona przed XXE i „billion laughs" z niezaufanych repozytoriów).
+- **`harvest_records` ma twarde limity** (max rekordów, max stron, przerwanie przy
+  braku postępu) — złośliwy serwer nie zapętli klienta.
+- **SSRF z natury narzędzia:** serwer pobiera dowolny `base_url` podany przez
+  klienta (taki jest cel). Dozwolone są tylko schematy `http`/`https`. Jeśli
+  wdrażasz wariant **zdalny (HTTP)** w sieci z zasobami wewnętrznymi, uruchom go w
+  środowisku z ograniczeniem sieci wychodzącej — model mógłby wskazać adres
+  wewnętrzny (np. endpoint metadanych chmury).
 
 ## Licencja
 

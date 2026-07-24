@@ -69,3 +69,18 @@ async def test_http_404_raises_http_error():
     with pytest.raises(OaiHttpError):
         await client.fetch(BASE, "Identify", {})
     await client.aclose()
+
+
+async def test_non_http_scheme_rejected():
+    # SSRF/LFI: file://, gopher:// itp. nie mogą być pobierane.
+    called = {"n": 0}
+
+    def handler(request):
+        called["n"] += 1
+        return httpx.Response(200, content=b"x")
+
+    client = make_client(handler, [])
+    with pytest.raises(OaiHttpError):
+        await client.fetch("file:///etc/passwd", "Identify", {})
+    await client.aclose()
+    assert called["n"] == 0  # żądanie w ogóle nie wyszło

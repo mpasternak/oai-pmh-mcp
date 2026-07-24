@@ -20,6 +20,18 @@ class FakeClient:
         return self._responses.pop(0)
 
 
+class LoopingClient:
+    """Złośliwy serwer: zawsze oddaje token, ale zero rekordów (pętla)."""
+
+    def __init__(self, response_file):
+        self._data = load_fixture(response_file)
+        self.calls = 0
+
+    async def fetch(self, base_url, verb, params):
+        self.calls += 1
+        return self._data
+
+
 BASE = "https://www.wbc.poznan.pl/dlibra/oai-pmh-repository.xml"
 
 
@@ -83,3 +95,19 @@ async def test_invalid_format_rejected():
     client = FakeClient("identify.xml")
     with pytest.raises(ValueError):
         await tools.identify(client, BASE, format="yaml")
+
+
+async def test_harvest_terminates_on_token_without_records():
+    # DoS: serwer zwraca token, ale 0 rekordów. Harvest MUSI się zatrzymać.
+    client = LoopingClient("list_records_token_no_records.xml")
+    out = await tools.harvest_records(client, BASE, max_records=500, format="text")
+    assert client.calls < 5  # nie zapętlił się w nieskończoność
+    assert "truncated" in out.lower()
+
+
+async def test_harvest_caps_absurd_max_records():
+    # DoS: model prosi o miliard rekordów -> twardy górny limit.
+    client = FakeClient("list_records_page1.xml", "list_records_page2.xml")
+    # nie powinno rzucić ani próbować nieograniczenie; kończy na wyczerpaniu stron
+    out = await tools.harvest_records(client, BASE, max_records=10**9, format="text")
+    assert "oai:www.wbc.poznan.pl:3" in out
